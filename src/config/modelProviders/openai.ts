@@ -1470,7 +1470,7 @@ const OpenAI: ModelProviderCard = {
       contextWindowTokens: 65_536,
       description:
         'DeepSeek-R1 是一款强化学习（RL）驱动的推理模型，解决了模型中的重复性和可读性问题。在 RL 之前，DeepSeek-R1 引入了冷启动数据，进一步优化了推理性能。它在数学、代码和推理任务中与 OpenAI-o1 表现相当，并且通过精心设计的训练方法，提升了整体效果。',
-      displayName: 'DeepSeek R1(NV)',
+      displayName: 'DeepSeek R1(Fast)',
       enabled: true,
       id: 'deepseek-ai/deepseek-r1-nv',
       pricing: {
@@ -1486,6 +1486,19 @@ const OpenAI: ModelProviderCard = {
       displayName: 'DeepSeek R1(AZ)',
       enabled: true,
       id: 'deepseek-reasoner-az',
+      pricing: {
+        currency: 'CNY',
+        input: 4,
+        output: 16,
+      },
+    },
+    {
+      contextWindowTokens: 131_072,
+      description:
+        'DeepSeek-R1 0528 版本',
+      displayName: 'DeepSeek R1 0528 (Fireworks)',
+      enabled: true,
+      id: 'DeepSeek-R1-0528',
       pricing: {
         currency: 'CNY',
         input: 4,
