@@ -1,4 +1,5 @@
 import { AIChatModelCard } from '@/types/aiModel';
+
 // https://siliconflow.cn/zh-cn/models
 const siliconcloudChatModels: AIChatModelCard[] = [
   {
@@ -333,7 +334,7 @@ const siliconcloudChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
-      reasoning: true
+      reasoning: true,
     },
     contextWindowTokens: 131_072,
     description:
@@ -350,7 +351,7 @@ const siliconcloudChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
-      reasoning: true
+      reasoning: true,
     },
     contextWindowTokens: 131_072,
     description:
@@ -367,7 +368,7 @@ const siliconcloudChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
-      reasoning: true
+      reasoning: true,
     },
     contextWindowTokens: 131_072,
     description:
@@ -384,7 +385,7 @@ const siliconcloudChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
-      reasoning: true
+      reasoning: true,
     },
     contextWindowTokens: 131_072,
     description:
@@ -401,7 +402,7 @@ const siliconcloudChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
-      reasoning: true
+      reasoning: true,
     },
     contextWindowTokens: 131_072,
     description:
@@ -418,7 +419,7 @@ const siliconcloudChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
-      reasoning: true
+      reasoning: true,
     },
     contextWindowTokens: 131_072,
     description:
