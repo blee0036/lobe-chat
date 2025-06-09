@@ -190,6 +190,8 @@ const OpenAI: ModelProviderCard = {
     {
       contextWindowTokens: 128_000,
       description: 'GPT-4o mini search preview 是一个专门为搜索功能优化的预览版本，具有增强的网络搜索能力和实时信息检索功能。',
+      description:
+        'GPT-4o mini search preview 是一个专门为搜索功能优化的预览版本，具有增强的网络搜索能力和实时信息检索功能。',
       displayName: 'GPT-4o mini Search Preview',
       functionCall: true,
       id: 'gpt-4o-mini-search-preview',
@@ -1533,6 +1535,7 @@ const OpenAI: ModelProviderCard = {
     smoothing: {
       text: true,
     },
+    supportResponsesApi: true,
   },
   url: 'https://openai.com',
 };
