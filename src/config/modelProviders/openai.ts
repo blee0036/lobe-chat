@@ -913,6 +913,37 @@ const OpenAI: ModelProviderCard = {
     //gemini
     {
       contextWindowTokens: 1_048_576 + 65_536,
+      description: 'Gemini 2.5 Flash 是 Google 性价比最高的模型，提供全面的功能。',
+      displayName: 'Gemini 2.5 Flash',
+      enabled: true,
+      functionCall: true,
+      id: 'gemini-2.5-flash',
+      maxOutput: 65_536,
+      pricing: {
+        input: 0.3,
+        output: 2.5,
+      },
+      releasedAt: '2025-06-17',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 1_000_000 + 64_000,
+      description:
+        'Gemini 2.5 Flash-Lite Preview 是 Google 最小、性价比最高的模型，专为大规模使用而设计。',
+      displayName: 'Gemini 2.5 Flash-Lite Preview 06-17',
+      enabled: true,
+      functionCall: true,
+      id: 'gemini-2.5-flash-lite-preview-06-17',
+      maxOutput: 64_000,
+      pricing: {
+        input: 0.1,
+        output: 0.4,
+      },
+      releasedAt: '2025-06-17',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 1_048_576 + 65_536,
       description: 'Gemini 2.5 Flash Preview 是 Google 性价比最高的模型，提供全面的功能。',
       displayName: 'Gemini 2.5 Flash Preview 05-20',
       enabled: true,
@@ -929,6 +960,22 @@ const OpenAI: ModelProviderCard = {
     {
       contextWindowTokens: 1_048_576 + 65_536,
       description:
+        'Gemini 2.5 Pro 是 Google 最先进的思维模型，能够对代码、数学和STEM领域的复杂问题进行推理，以及使用长上下文分析大型数据集、代码库和文档。',
+      displayName: 'Gemini 2.5 Pro (Paid)',
+      enabled: true,
+      functionCall: true,
+      id: 'gemini-2.5-pro',
+      maxOutput: 65_536,
+      pricing: {
+        input: 1.25, // prompts <= 200k tokens
+        output: 10, // prompts <= 200k tokens
+      },
+      releasedAt: '2025-06-17',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 1_048_576 + 65_536,
+      description:
         'Gemini 2.5 Pro Preview 是 Google 最先进的思维模型，能够对代码、数学和STEM领域的复杂问题进行推理，以及使用长上下文分析大型数据集、代码库和文档。',
       displayName: 'Gemini 2.5 Pro Preview 05-06 (Paid)',
       enabled: true,
@@ -940,54 +987,6 @@ const OpenAI: ModelProviderCard = {
         output: 10, // prompts <= 200k tokens
       },
       releasedAt: '2025-05-06',
-      vision: true,
-    },
-    {
-      contextWindowTokens: 1_048_576 + 65_536,
-      description: 'Gemini 2.5 Flash Preview 是 Google 性价比最高的模型，提供全面的功能。',
-      displayName: 'Gemini 2.5 Flash Preview 04-17',
-      enabled: true,
-      functionCall: true,
-      id: 'gemini-2.5-flash-preview-04-17',
-      maxOutput: 65_536,
-      pricing: {
-        input: 0.15,
-        output: 3.5, // Thinking
-      },
-      releasedAt: '2025-04-17',
-      vision: true,
-    },
-    {
-      contextWindowTokens: 1_048_576 + 65_536,
-      description:
-        'Gemini 2.5 Pro Preview 是 Google 最先进的思维模型，能够对代码、数学和STEM领域的复杂问题进行推理，以及使用长上下文分析大型数据集、代码库和文档。',
-      displayName: 'Gemini 2.5 Pro Preview 03-25 (Paid)',
-      enabled: true,
-      functionCall: true,
-      id: 'gemini-2.5-pro-preview-03-25',
-      maxOutput: 65_536,
-      pricing: {
-        input: 1.25, // prompts <= 200k tokens
-        output: 10, // prompts <= 200k tokens
-      },
-      releasedAt: '2025-03-25',
-      vision: true,
-    },
-    {
-      contextWindowTokens: 1_048_567 + 65_536,
-      description:
-        'Gemini 2.5 Pro Experimental 是 Google 最先进的思维模型，能够对代码、数学和STEM领域的复杂问题进行推理，还能利用长上下文来分析大型数据集、代码库和文档。',
-      displayName: 'Gemini 2.5 Pro Experimental 03-25',
-      enabled: true,
-      functionCall: true,
-      id: 'gemini-2.5-pro-exp-03-25',
-      maxOutput: 65_536,
-      pricing: {
-        cachedInput: 0,
-        input: 0,
-        output: 0,
-      },
-      releasedAt: '2025-03-25',
       vision: true,
     },
     {
@@ -1037,23 +1036,6 @@ const OpenAI: ModelProviderCard = {
         output: 0.3,
       },
       releasedAt: '2025-02-05',
-      vision: true,
-    },
-    {
-      contextWindowTokens: 1_048_576 + 65_536,
-      description:
-        'Gemini 2.0 Flash Exp 是 Google 最新的实验性多模态AI模型，拥有下一代特性，卓越的速度，原生工具调用以及多模态生成。',
-      displayName: 'Gemini 2.0 Flash Thinking Experimental 01-21',
-      enabled: true,
-      functionCall: true,
-      id: 'gemini-2.0-flash-thinking-exp-01-21',
-      maxOutput: 65_536,
-      pricing: {
-        cachedInput: 0,
-        input: 0,
-        output: 0,
-      },
-      releasedAt: '2025-01-21',
       vision: true,
     },
     {
@@ -1167,77 +1149,6 @@ const OpenAI: ModelProviderCard = {
       },
       releasedAt: '2024-02-15',
       vision: true,
-    },
-    {
-      contextWindowTokens: 1_000_000 + 8192,
-      description: 'Gemini 1.5 Flash 8B 是一款高效的多模态模型，支持广泛应用的扩展。',
-      displayName: 'Gemini 1.5 Flash 8B',
-      enabled: true,
-      functionCall: true,
-      id: 'gemini-1.5-flash-8b',
-      maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.02,
-        input: 0.075,
-        output: 0.3,
-      },
-      releasedAt: '2024-10-03',
-      vision: true,
-    },
-    {
-      contextWindowTokens: 1_000_000 + 8192,
-      description:
-        'Gemini 1.5 Flash 8B 0924 是最新的实验性模型，在文本和多模态用例中都有显著的性能提升。',
-      displayName: 'Gemini 1.5 Flash 8B 0924',
-      functionCall: true,
-      id: 'gemini-1.5-flash-8b-exp-0924',
-      maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.018_75,
-        input: 0.075,
-        output: 0.3,
-      },
-      releasedAt: '2024-09-24',
-      vision: true,
-    },
-    // Gemini 1.0 Pro will be removed on 2025.02.15
-    {
-      contextWindowTokens: 30_720 + 2048,
-      description: 'Gemini 1.0 Pro 是Google的高性能AI模型，专为广泛任务扩展而设计。',
-      displayName: 'Gemini 1.0 Pro',
-      id: 'gemini-1.0-pro-latest',
-      maxOutput: 2048,
-      pricing: {
-        input: 0.5,
-        output: 1.5,
-      },
-      releasedAt: '2023-12-06',
-    },
-    {
-      contextWindowTokens: 30_720 + 2048,
-      description:
-        'Gemini 1.0 Pro 001 (Tuning) 提供稳定并可调优的性能，是复杂任务解决方案的理想选择。',
-      displayName: 'Gemini 1.0 Pro 001 (Tuning)',
-      functionCall: true,
-      id: 'gemini-1.0-pro-001',
-      maxOutput: 2048,
-      pricing: {
-        input: 0.5,
-        output: 1.5,
-      },
-      releasedAt: '2023-12-06',
-    },
-    {
-      contextWindowTokens: 30_720 + 2048,
-      description: 'Gemini 1.0 Pro 002 (Tuning) 提供出色的多模态支持，专注于复杂任务的有效解决。',
-      displayName: 'Gemini 1.0 Pro 002 (Tuning)',
-      id: 'gemini-1.0-pro-002',
-      maxOutput: 2048,
-      pricing: {
-        input: 0.5,
-        output: 1.5,
-      },
-      releasedAt: '2023-12-06',
     },
     // 硅基流动
     {
