@@ -69,7 +69,7 @@ const googleChatModels: AIChatModelCard[] = [
     },
     releasedAt: '2025-06-17',
     settings: {
-      extendParams: ['enableReasoning', 'reasoningBudgetToken'],
+      extendParams: ['thinkingBudget'],
       searchImpl: 'params',
       searchProvider: 'google',
     },
@@ -94,7 +94,7 @@ const googleChatModels: AIChatModelCard[] = [
     },
     releasedAt: '2025-06-05',
     settings: {
-      extendParams: ['enableReasoning', 'reasoningBudgetToken'],
+      extendParams: ['thinkingBudget'],
       searchImpl: 'params',
       searchProvider: 'google',
     },
@@ -168,7 +168,7 @@ const googleChatModels: AIChatModelCard[] = [
     },
     releasedAt: '2025-06-17',
     settings: {
-      extendParams: ['enableReasoning', 'reasoningBudgetToken'],
+      extendParams: ['thinkingBudget'],
       searchImpl: 'params',
       searchProvider: 'google',
     },
@@ -192,7 +192,7 @@ const googleChatModels: AIChatModelCard[] = [
     },
     releasedAt: '2025-05-20',
     settings: {
-      extendParams: ['enableReasoning', 'reasoningBudgetToken'],
+      extendParams: ['thinkingBudget'],
       searchImpl: 'params',
       searchProvider: 'google',
     },
@@ -216,7 +216,7 @@ const googleChatModels: AIChatModelCard[] = [
     },
     releasedAt: '2025-04-17',
     settings: {
-      extendParams: ['enableReasoning', 'reasoningBudgetToken'],
+      extendParams: ['thinkingBudget'],
       searchImpl: 'params',
       searchProvider: 'google',
     },
@@ -264,7 +264,7 @@ const googleChatModels: AIChatModelCard[] = [
     },
     releasedAt: '2025-06-11',
     settings: {
-      extendParams: ['enableReasoning', 'reasoningBudgetToken'],
+      extendParams: ['thinkingBudget'],
       searchImpl: 'params',
       searchProvider: 'google',
     },
