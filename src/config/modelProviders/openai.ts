@@ -7,6 +7,25 @@ const OpenAI: ModelProviderCard = {
     {
       contextWindowTokens: 400_000,
       description:
+        '跨领域编码和代理任务的最佳模型。GPT-5 在准确性、速度、推理、上下文识别、结构化思维和问题解决方面实现了飞跃。',
+      displayName: 'GPT-5',
+      enabled: true,
+      functionCall: true,
+      id: 'gpt-5',
+      maxOutput: 128_000,
+      pricing: {
+        units: [
+          { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textInput_cacheRead', rate: 0.125, strategy: 'fixed', unit: 'millionTokens' },
+        ],
+      },
+      releasedAt: '2025-08-07',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 400_000,
+      description:
         '更快、更经济高效的 GPT-5 版本，适用于明确定义的任务。在保持高质量输出的同时，提供更快的响应速度。',
       displayName: 'GPT-5 mini',
       enabled: true,
@@ -14,12 +33,69 @@ const OpenAI: ModelProviderCard = {
       id: 'gpt-5-mini',
       maxOutput: 128_000,
       pricing: {
-        cachedInput: 0.03,
-        input: 0.25,
-        output: 2,
+        units: [
+          { name: 'textInput', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textInput_cacheRead', rate: 0.03, strategy: 'fixed', unit: 'millionTokens' },
+        ],
       },
       releasedAt: '2025-08-07',
       vision: true,
+    },
+    {
+      contextWindowTokens: 400_000,
+      description:
+        '最快、最经济高效的 GPT-5 版本。非常适合需要快速响应且成本敏感的应用场景。',
+      displayName: 'GPT-5 nano',
+      enabled: true,
+      functionCall: true,
+      id: 'gpt-5-nano',
+      maxOutput: 128_000,
+      pricing: {
+        units: [
+          { name: 'textInput', rate: 0.05, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 0.4, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textInput_cacheRead', rate: 0.005, strategy: 'fixed', unit: 'millionTokens' },
+        ],
+      },
+      releasedAt: '2025-08-07',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 400_000,
+      description:
+        'ChatGPT 中使用的 GPT-5 模型。结合了强大的语言理解与生成能力，适合对话式交互应用。',
+      displayName: 'GPT-5 Chat',
+      enabled: true,
+      functionCall: true,
+      id: 'gpt-5-chat-latest',
+      maxOutput: 128_000,
+      pricing: {
+        units: [
+          { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textInput_cacheRead', rate: 0.125, strategy: 'fixed', unit: 'millionTokens' },
+        ],
+      },
+      releasedAt: '2025-08-07',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 131_072,
+      description:
+        'OpenAI GPT-OSS 120B 是一款拥有 1200 亿参数的顶尖语言模型，内置浏览器搜索和代码执行功能，并具备推理能力。',
+      displayName: 'GPT OSS 120B',
+      enabled: true,
+      functionCall: true,
+      id: 'gpt-oss-120b',
+      maxOutput: 32_768,
+      pricing: {
+        units: [
+          { name: 'textInput', rate: 0.15, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 0.75, strategy: 'fixed', unit: 'millionTokens' },
+        ],
+      },
+      releasedAt: '2025-08-06',
     },
     {
       contextWindowTokens: 1_047_576,
@@ -29,11 +105,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gpt-4.1',
       maxOutput: 32_768,
-      pricing: {
-        cachedInput: 0.5,
-        input: 2,
-        output: 8,
-      },
       releasedAt: '2025-04-14',
       vision: true,
     },
@@ -45,11 +116,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gpt-4.1-mini',
       maxOutput: 32_768,
-      pricing: {
-        cachedInput: 0.1,
-        input: 0.4,
-        output: 1.6,
-      },
       releasedAt: '2025-04-14',
       vision: true,
     },
@@ -62,11 +128,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gpt-4.1-nano',
       maxOutput: 32_768,
-      pricing: {
-        cachedInput: 0.025,
-        input: 0.1,
-        output: 0.4,
-      },
       releasedAt: '2025-04-14',
       vision: true,
     },
@@ -79,11 +140,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'o3-mini',
       maxOutput: 100_000,
-      pricing: {
-        cachedInput: 0.55,
-        input: 1.1,
-        output: 4.4,
-      },
       releasedAt: '2025-01-31',
     },
     {
@@ -94,11 +150,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       id: 'o1-mini',
       maxOutput: 65_536,
-      pricing: {
-        cachedInput: 0.55,
-        input: 1.1,
-        output: 4.4,
-      },
       releasedAt: '2024-09-12',
     },
     {
@@ -109,11 +160,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       id: 'o1',
       maxOutput: 100_000,
-      pricing: {
-        cachedInput: 7.5,
-        input: 15,
-        output: 60,
-      },
       releasedAt: '2024-12-17',
       vision: true,
     },
@@ -125,10 +171,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       id: 'o1-2024-12-17',
       maxOutput: 100_000,
-      pricing: {
-        input: 15,
-        output: 60,
-      },
       releasedAt: '2024-12-17',
       vision: true,
     },
@@ -140,10 +182,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       id: 'o1-preview',
       maxOutput: 32_768,
-      pricing: {
-        input: 15,
-        output: 60,
-      },
       releasedAt: '2024-09-12',
     },
     {
@@ -155,11 +193,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gpt-4.5-preview', // deprecated on 2025-07-14
       maxOutput: 16_384,
-      pricing: {
-        cachedInput: 37.5,
-        input: 75,
-        output: 150,
-      },
       releasedAt: '2025-02-27',
       vision: true,
     },
@@ -172,10 +205,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gpt-4o-mini',
       maxOutput: 16_385,
-      pricing: {
-        input: 0.15,
-        output: 0.6,
-      },
       vision: true,
     },
     {
@@ -184,10 +213,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'ChatGPT-4o 绘图 plus渠道',
       enabled: true,
       id: 'gpt-4o-image',
-      pricing: {
-        input: 2.5,
-        output: 10,
-      },
       releasedAt: '2024-11-20',
       vision: true,
     },
@@ -197,10 +222,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'ChatGPT-4o 绘图 pro渠道',
       enabled: true,
       id: 'gpt-4o-image-vip',
-      pricing: {
-        input: 2.5,
-        output: 10,
-      },
       releasedAt: '2024-11-20',
       vision: true,
     },
@@ -212,10 +233,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gpt-4o-mini-search-preview',
       maxOutput: 16_384,
-      pricing: {
-        input: 0.15,
-        output: 0.6,
-      },
       releasedAt: '2024-12-01',
       vision: true,
     },
@@ -227,10 +244,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'gpt-4o-2024-11-20',
-      pricing: {
-        input: 2.5,
-        output: 10,
-      },
       releasedAt: '2024-11-20',
       vision: true,
     },
@@ -242,10 +255,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'gpt-4o',
-      pricing: {
-        input: 2.5,
-        output: 10,
-      },
       vision: true,
     },
     {
@@ -255,10 +264,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-4o 0806',
       functionCall: true,
       id: 'gpt-4o-2024-08-06',
-      pricing: {
-        input: 2.5,
-        output: 10,
-      },
       releasedAt: '2024-08-06',
       vision: true,
     },
@@ -269,10 +274,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-4o 0513',
       functionCall: true,
       id: 'gpt-4o-2024-05-13',
-      pricing: {
-        input: 5,
-        output: 15,
-      },
       releasedAt: '2024-05-13',
       vision: true,
     },
@@ -283,10 +284,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'ChatGPT-4o',
       enabled: true,
       id: 'chatgpt-4o-latest',
-      pricing: {
-        input: 5,
-        output: 15,
-      },
       vision: true,
     },
     {
@@ -296,10 +293,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-4 Turbo',
       functionCall: true,
       id: 'gpt-4-turbo',
-      pricing: {
-        input: 10,
-        output: 30,
-      },
       vision: true,
     },
     {
@@ -309,10 +302,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-4 Turbo Vision 0409',
       functionCall: true,
       id: 'gpt-4-turbo-2024-04-09',
-      pricing: {
-        input: 10,
-        output: 30,
-      },
       vision: true,
     },
     {
@@ -322,10 +311,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-4 Turbo Preview',
       functionCall: true,
       id: 'gpt-4-turbo-preview',
-      pricing: {
-        input: 10,
-        output: 30,
-      },
     },
     {
       contextWindowTokens: 128_000,
@@ -334,10 +319,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-4 Turbo Preview 0125',
       functionCall: true,
       id: 'gpt-4-0125-preview',
-      pricing: {
-        input: 10,
-        output: 30,
-      },
     },
     {
       contextWindowTokens: 128_000,
@@ -346,10 +327,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-4 Turbo Preview 1106',
       functionCall: true,
       id: 'gpt-4-1106-preview',
-      pricing: {
-        input: 10,
-        output: 30,
-      },
     },
     {
       contextWindowTokens: 8192,
@@ -358,10 +335,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-4',
       functionCall: true,
       id: 'gpt-4',
-      pricing: {
-        input: 30,
-        output: 60,
-      },
     },
     {
       contextWindowTokens: 8192,
@@ -370,10 +343,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-4 0613',
       functionCall: true,
       id: 'gpt-4-0613',
-      pricing: {
-        input: 30,
-        output: 60,
-      },
     },
     {
       contextWindowTokens: 32_768,
@@ -383,10 +352,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-4 32K',
       functionCall: true,
       id: 'gpt-4-32k',
-      pricing: {
-        input: 60,
-        output: 120,
-      },
     },
     {
       contextWindowTokens: 32_768,
@@ -396,10 +361,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-4 32K 0613',
       functionCall: true,
       id: 'gpt-4-32k-0613',
-      pricing: {
-        input: 60,
-        output: 120,
-      },
     },
     {
       contextWindowTokens: 16_385,
@@ -408,10 +369,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-3.5 Turbo',
       functionCall: true,
       id: 'gpt-3.5-turbo',
-      pricing: {
-        input: 0.5,
-        output: 1.5,
-      },
     },
     {
       contextWindowTokens: 16_385,
@@ -420,10 +377,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-3.5 Turbo 0125',
       functionCall: true,
       id: 'gpt-3.5-turbo-0125',
-      pricing: {
-        input: 0.5,
-        output: 1.5,
-      },
     },
     {
       contextWindowTokens: 16_385,
@@ -432,10 +385,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-3.5 Turbo 1106',
       functionCall: true,
       id: 'gpt-3.5-turbo-1106',
-      pricing: {
-        input: 1,
-        output: 2,
-      },
     },
     {
       contextWindowTokens: 4096,
@@ -444,10 +393,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-3.5 Turbo 0301',
       functionCall: true,
       id: 'gpt-3.5-turbo-0301',
-      pricing: {
-        input: 0.5,
-        output: 1.5,
-      },
     },
     {
       contextWindowTokens: 4096,
@@ -457,10 +402,6 @@ const OpenAI: ModelProviderCard = {
       // Will be discontinued on September 13, 2024
       id: 'gpt-3.5-turbo-0613',
       legacy: true,
-      pricing: {
-        input: 1.5,
-        output: 2,
-      },
     },
     {
       contextWindowTokens: 4096,
@@ -468,10 +409,6 @@ const OpenAI: ModelProviderCard = {
         'GPT 3.5 Turbo，适用于各种文本生成和理解任务，Currently points to gpt-3.5-turbo-0125',
       displayName: 'GPT-3.5 Turbo Instruct',
       id: 'gpt-3.5-turbo-instruct',
-      pricing: {
-        input: 1.5,
-        output: 2,
-      },
     },
     {
       contextWindowTokens: 16_385,
@@ -481,10 +418,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'GPT-3.5 Turbo 16K',
       id: 'gpt-3.5-turbo-16k',
       legacy: true,
-      pricing: {
-        input: 3,
-        output: 4,
-      },
     },
     {
       contextWindowTokens: 16_385,
@@ -492,10 +425,6 @@ const OpenAI: ModelProviderCard = {
         'GPT-3.5 Turbo 是 OpenAI 的一款基础模型，结合了高效性和经济性，广泛用于文本生成、理解和分析，专为指导性提示进行调整，去除了与聊天相关的优化。', // Will be discontinued on September 13, 2024
       id: 'gpt-3.5-turbo-16k-0613',
       legacy: true,
-      pricing: {
-        input: 3,
-        output: 4,
-      },
     },
     {
       contextWindowTokens: 128_000,
@@ -525,13 +454,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'deepseek-chat',
-      pricing: {
-        // 2025.2.9 之后涨价
-        cachedInput: 0.1,
-        currency: 'CNY',
-        input: 1,
-        output: 2,
-      },
       releasedAt: '2024-12-26',
     },
     {
@@ -541,15 +463,45 @@ const OpenAI: ModelProviderCard = {
       displayName: 'DeepSeek R1',
       enabled: true,
       id: 'deepseek-reasoner',
-      pricing: {
-        cachedInput: 1,
-        currency: 'CNY',
-        input: 4,
-        output: 16,
-      },
       releasedAt: '2025-01-20',
     },
     // claude
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Opus 4.1 是 Anthropic 最新的用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+      displayName: 'Claude Opus 4.1',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-opus-4-1-20250805',
+      maxOutput: 32_000,
+      releasedAt: '2025-08-05',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Opus 4 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+      displayName: 'Claude Opus 4',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-opus-4-20250514',
+      maxOutput: 32_000,
+      releasedAt: '2025-05-23',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Sonnet 4 可以产生近乎即时的响应或延长的逐步思考，用户可以清晰地看到这些过程。API 用户还可以对模型思考的时间进行细致的控制',
+      displayName: 'Claude Sonnet 4',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-sonnet-4-20250514',
+      maxOutput: 32_000,
+      releasedAt: '2025-05-23',
+      vision: true,
+    },
     {
       contextWindowTokens: 200_000,
       description:
@@ -559,12 +511,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-7-sonnet-20250219',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.1,
-        input: 1,
-        output: 5,
-        writeCacheInput: 1.25,
-      },
       releasedAt: '2025-02-24',
     },
     {
@@ -576,12 +522,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-7-sonnet-20250219-thinking',
       maxOutput: 64_000,
-      pricing: {
-        cachedInput: 0.1,
-        input: 1,
-        output: 5,
-        writeCacheInput: 1.25,
-      },
       releasedAt: '2025-02-24',
     },
     {
@@ -593,12 +533,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-5-haiku-20241022',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.1,
-        input: 1,
-        output: 5,
-        writeCacheInput: 1.25,
-      },
       releasedAt: '2024-11-05',
     },
     {
@@ -610,12 +544,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-5-sonnet-20241022',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.3,
-        input: 3,
-        output: 15,
-        writeCacheInput: 3.75,
-      },
       releasedAt: '2024-10-22',
       vision: true,
     },
@@ -627,12 +555,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-5-sonnet-20240620',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.3,
-        input: 3,
-        output: 15,
-        writeCacheInput: 3.75,
-      },
       releasedAt: '2024-06-20',
       vision: true,
     },
@@ -678,12 +600,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-7-sonnet-guan-20250219',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.1,
-        input: 1,
-        output: 5,
-        writeCacheInput: 1.25,
-      },
       releasedAt: '2025-02-24',
     },
     {
@@ -695,12 +611,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-7-sonnet-guan-20250219-thinking',
       maxOutput: 64_000,
-      pricing: {
-        cachedInput: 0.1,
-        input: 1,
-        output: 5,
-        writeCacheInput: 1.25,
-      },
       releasedAt: '2025-02-24',
     },
     {
@@ -712,12 +622,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-5-haiku-guan-20241022',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.1,
-        input: 1,
-        output: 5,
-        writeCacheInput: 1.25,
-      },
       releasedAt: '2024-11-05',
     },
     {
@@ -729,12 +633,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-5-sonnet-guan-20241022',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.3,
-        input: 3,
-        output: 15,
-        writeCacheInput: 3.75,
-      },
       releasedAt: '2024-10-22',
       vision: true,
     },
@@ -746,12 +644,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-5-sonnet-guan-20240620',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.3,
-        input: 3,
-        output: 15,
-        writeCacheInput: 3.75,
-      },
       releasedAt: '2024-06-20',
       vision: true,
     },
@@ -936,10 +828,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.5-flash',
       maxOutput: 65_536,
-      pricing: {
-        input: 0.3,
-        output: 2.5,
-      },
       releasedAt: '2025-06-17',
       vision: true,
     },
@@ -952,10 +840,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.5-flash-lite-preview-06-17',
       maxOutput: 64_000,
-      pricing: {
-        input: 0.1,
-        output: 0.4,
-      },
       releasedAt: '2025-06-17',
       vision: true,
     },
@@ -967,10 +851,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.5-flash-preview-05-20',
       maxOutput: 65_536,
-      pricing: {
-        input: 0.15,
-        output: 3.5, // Thinking
-      },
       releasedAt: '2025-04-17',
       vision: true,
     },
@@ -983,10 +863,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.5-pro',
       maxOutput: 65_536,
-      pricing: {
-        input: 1.25, // prompts <= 200k tokens
-        output: 10, // prompts <= 200k tokens
-      },
       releasedAt: '2025-06-17',
       vision: true,
     },
@@ -999,10 +875,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.5-pro-preview-05-06',
       maxOutput: 65_536,
-      pricing: {
-        input: 1.25, // prompts <= 200k tokens
-        output: 10, // prompts <= 200k tokens
-      },
       releasedAt: '2025-05-06',
       vision: true,
     },
@@ -1015,11 +887,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.0-flash',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.025,
-        input: 0.1,
-        output: 0.4,
-      },
       releasedAt: '2025-02-05',
       vision: true,
     },
@@ -1032,11 +899,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.0-flash-001',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.025,
-        input: 0.1,
-        output: 0.4,
-      },
       releasedAt: '2025-02-05',
       vision: true,
     },
@@ -1047,11 +909,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       id: 'gemini-2.0-flash-lite-preview-02-05',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.018_75,
-        input: 0.075,
-        output: 0.3,
-      },
       releasedAt: '2025-02-05',
       vision: true,
     },
@@ -1064,11 +921,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.0-flash-exp',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0,
-        input: 0,
-        output: 0,
-      },
       releasedAt: '2024-12-11',
       vision: true,
     },
@@ -1081,11 +933,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.5-flash-latest',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.018_75,
-        input: 0.075,
-        output: 0.3,
-      },
       vision: true,
     },
     {
@@ -1096,11 +943,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.5-flash-002',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.018_75,
-        input: 0.075,
-        output: 0.3,
-      },
       releasedAt: '2024-09-25',
       vision: true,
     },
@@ -1111,11 +953,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.5-flash-001',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.018_75,
-        input: 0.075,
-        output: 0.3,
-      },
       vision: true,
     },
     {
@@ -1127,11 +964,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.5-pro-latest',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.875,
-        input: 3.5,
-        output: 10.5,
-      },
       releasedAt: '2024-02-15',
       vision: true,
     },
@@ -1144,11 +976,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.5-pro-002',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.315,
-        input: 1.25,
-        output: 2.5,
-      },
       releasedAt: '2024-09-24',
       vision: true,
     },
@@ -1159,11 +986,6 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.5-pro-001',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.875,
-        input: 3.5,
-        output: 10.5,
-      },
       releasedAt: '2024-02-15',
       vision: true,
     },
@@ -1176,11 +998,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'Qwen/Qwen3-235B-A22B',
-      pricing: {
-        currency: 'CNY',
-        input: 1.25,
-        output: 5,
-      },
       releasedAt: '2025-04-28',
     },
     {
@@ -1191,11 +1008,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'Qwen/Qwen3-32B',
-      pricing: {
-        currency: 'CNY',
-        input: 0.5,
-        output: 2,
-      },
       releasedAt: '2025-04-28',
     },
     {
@@ -1206,11 +1018,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'Qwen/Qwen3-30B-A3B',
-      pricing: {
-        currency: 'CNY',
-        input: 0.35,
-        output: 1.4,
-      },
       releasedAt: '2025-04-28',
     },
     {
@@ -1221,11 +1028,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'Qwen/Qwen3-14B',
-      pricing: {
-        currency: 'CNY',
-        input: 0.25,
-        output: 1,
-      },
       releasedAt: '2025-04-28',
     },
     {
@@ -1236,11 +1038,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'Qwen/Qwen3-8B',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
       releasedAt: '2025-04-28',
     },
     {
@@ -1251,11 +1048,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'THUDM/GLM-Z1-Rumination-32B-0414',
-      pricing: {
-        currency: 'CNY',
-        input: 1,
-        output: 4,
-      },
     },
     {
       contextWindowTokens: 32_768,
@@ -1265,11 +1057,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'THUDM/GLM-Z1-32B-0414',
-      pricing: {
-        currency: 'CNY',
-        input: 1,
-        output: 4,
-      },
     },
     {
       contextWindowTokens: 32_768,
@@ -1279,11 +1066,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'THUDM/GLM-Z1-9B-0414',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
     },
     {
       contextWindowTokens: 32_768,
@@ -1293,11 +1075,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'THUDM/GLM-4-32B-0414',
-      pricing: {
-        currency: 'CNY',
-        input: 1.89,
-        output: 1.89,
-      },
     },
     {
       contextWindowTokens: 32_768,
@@ -1307,11 +1084,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'THUDM/GLM-4-9B-0414',
-      pricing: {
-        currency: 'CNY',
-        input: 0,
-        output: 0,
-      },
     },
     {
       contextWindowTokens: 65_536,
@@ -1320,11 +1092,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'DeepSeek R1(SL)',
       enabled: true,
       id: 'deepseek-ai/DeepSeek-R1',
-      pricing: {
-        currency: 'CNY',
-        input: 4,
-        output: 16,
-      },
     },
     {
       contextWindowTokens: 65_536,
@@ -1334,12 +1101,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'deepseek-ai/DeepSeek-V3',
-      pricing: {
-        // 2.9 涨价
-        currency: 'CNY',
-        input: 1,
-        output: 2,
-      },
     },
     // grok
     {
@@ -1349,10 +1110,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'grok-beta',
-      pricing: {
-        input: 5,
-        output: 15,
-      },
     },
     {
       contextWindowTokens: 8192,
@@ -1361,10 +1118,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'grok-vision-beta',
-      pricing: {
-        input: 5,
-        output: 15,
-      },
       vision: true,
     },
     {
@@ -1374,10 +1127,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'grok-2-1212',
-      pricing: {
-        input: 2,
-        output: 10,
-      },
       releasedAt: '2024-12-12',
     },
     {
@@ -1387,10 +1136,6 @@ const OpenAI: ModelProviderCard = {
       enabled: true,
       functionCall: true,
       id: 'grok-2-vision-1212',
-      pricing: {
-        input: 2,
-        output: 10,
-      },
       releasedAt: '2024-12-12',
       vision: true,
     },
@@ -1402,11 +1147,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'Qwen3 235B A22B FP8',
       enabled: true,
       id: 'Qwen3-235B-A22B-FP8',
-      pricing: {
-        currency: 'CNY',
-        input: 1.25,
-        output: 5,
-      },
       releasedAt: '2025-04-28',
     },
     {
@@ -1416,11 +1156,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'DeepSeek R1(Fast)',
       enabled: true,
       id: 'deepseek-ai/deepseek-r1-nv',
-      pricing: {
-        currency: 'CNY',
-        input: 4,
-        output: 16,
-      },
     },
     {
       contextWindowTokens: 65_536,
@@ -1429,11 +1164,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'DeepSeek R1(AZ)',
       enabled: true,
       id: 'deepseek-reasoner-az',
-      pricing: {
-        currency: 'CNY',
-        input: 4,
-        output: 16,
-      },
     },
     {
       contextWindowTokens: 131_072,
@@ -1442,11 +1172,6 @@ const OpenAI: ModelProviderCard = {
       displayName: 'DeepSeek R1 0528 (Fireworks)',
       enabled: true,
       id: 'DeepSeek-R1-0528',
-      pricing: {
-        currency: 'CNY',
-        input: 4,
-        output: 16,
-      },
     },
   ],
   checkModel: 'gpt-4.1-nano',

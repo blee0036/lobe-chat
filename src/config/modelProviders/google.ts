@@ -12,10 +12,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.5-pro-exp-03-25',
       maxOutput: 65_536,
-      pricing: {
-        input: 0,
-        output: 0,
-      },
       releasedAt: '2025-03-25',
       vision: true,
     },
@@ -28,11 +24,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.0-pro-exp-02-05',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0,
-        input: 0,
-        output: 0,
-      },
       releasedAt: '2025-02-05',
       vision: true,
     },
@@ -45,11 +36,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.0-flash',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.025,
-        input: 0.1,
-        output: 0.4,
-      },
       releasedAt: '2025-02-05',
       vision: true,
     },
@@ -62,11 +48,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.0-flash-001',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.025,
-        input: 0.1,
-        output: 0.4,
-      },
       releasedAt: '2025-02-05',
       vision: true,
     },
@@ -78,11 +59,6 @@ const Google: ModelProviderCard = {
       enabled: true,
       id: 'gemini-2.0-flash-lite-preview-02-05',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.018_75,
-        input: 0.075,
-        output: 0.3,
-      },
       releasedAt: '2025-02-05',
       vision: true,
     },
@@ -95,11 +71,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.0-pro-exp-02-05',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0,
-        input: 0,
-        output: 0
-      },
       releasedAt: '2025-02-05',
       vision: true
     },
@@ -112,11 +83,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.0-flash',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.025,
-        input: 0.1,
-        output: 0.4,
-      },
       releasedAt: '2025-02-05',
       vision: true
     },
@@ -127,11 +93,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.0-flash-001',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.025,
-        input: 0.1,
-        output: 0.4,
-      },
       releasedAt: '2025-02-05',
       vision: true
     },
@@ -142,11 +103,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-exp-1206',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0,
-        input: 0,
-        output: 0
-      },
       releasedAt: '2024-12-06',
       vision: true
     },
@@ -157,11 +113,6 @@ const Google: ModelProviderCard = {
       enabled: true,
       id: 'gemini-2.0-flash-thinking-exp-01-21',
       maxOutput: 65_536,
-      pricing: {
-        cachedInput: 0,
-        input: 0,
-        output: 0,
-      },
       releasedAt: '2025-01-21',
       vision: true
     },
@@ -171,11 +122,6 @@ const Google: ModelProviderCard = {
       displayName: 'Gemini 2.0 Flash Thinking Experimental 12-19',
       id: 'gemini-2.0-flash-thinking-exp-1219',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0,
-        input: 0,
-        output: 0
-      },
       releasedAt: '2024-12-19',
       vision: true
     },
@@ -186,11 +132,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-2.0-flash-exp',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0,
-        input: 0,
-        output: 0,
-      },
       releasedAt: '2024-12-11',
       vision: true
     },
@@ -201,11 +142,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'learnlm-1.5-pro-experimental',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0,
-        input: 0,
-        output: 0
-      },
       releasedAt: '2024-11-19',
       vision: true
     },
@@ -216,11 +152,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.5-flash-002',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.018_75,
-        input: 0.075,
-        output: 0.3,
-      },
       releasedAt: '2024-09-25',
       vision: true
     },
@@ -231,11 +162,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.5-flash-001',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.018_75,
-        input: 0.075,
-        output: 0.3,
-      },
       vision: true,
     },
     {
@@ -245,11 +171,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.5-pro-002',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.315,
-        input: 1.25,
-        output: 2.5,
-      },
       releasedAt: '2024-09-24',
       vision: true
     },
@@ -260,11 +181,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.5-pro-001',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.875,
-        input: 3.5,
-        output: 10.5,
-      },
       releasedAt: '2024-02-15',
       vision: true
     },
@@ -275,11 +191,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.5-flash-8b',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.02,
-        input: 0.075,
-        output: 0.3,
-      },
       releasedAt: '2024-10-03',
       vision: true
     },
@@ -290,11 +201,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.5-flash-8b-exp-0924',
       maxOutput: 8192,
-      pricing: {
-        cachedInput: 0.018_75,
-        input: 0.075,
-        output: 0.3
-      },
       releasedAt: '2024-09-24',
       vision: true
     },
@@ -305,10 +211,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.0-pro-001',
       maxOutput: 2048,
-      pricing: {
-        input: 0.5,
-        output: 1.5
-      },
       releasedAt: '2023-12-06'
     },
     {
@@ -318,10 +220,6 @@ const Google: ModelProviderCard = {
       functionCall: true,
       id: 'gemini-1.0-pro-002',
       maxOutput: 2048,
-      pricing: {
-        input: 0.5,
-        output: 1.5
-      },
       releasedAt: '2023-12-06'
     }
   ],

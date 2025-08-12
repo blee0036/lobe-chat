@@ -10,55 +10,6 @@ const googleChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 1_048_576 + 65_536,
-    description: 'Gemini 2.5 Flash Preview 是 Google 性价比最高的模型，提供全面的功能。',
-    displayName: 'Gemini 2.5 Flash Preview 05-20',
-    enabled: true,
-    id: 'gemini-2.5-flash-preview-05-20',
-    maxOutput: 65_536,
-    pricing: {
-      input: 0.15,
-      output: 3.5, // Thinking
-    },
-    releasedAt: '2025-05-20',
-    settings: {
-      searchImpl: 'params',
-      searchProvider: 'google',
-    },
-    type: 'chat',
-  },
-  {
-    abilities: {
-      functionCall: true,
-      reasoning: true,
-      search: true,
-      vision: true,
-    },
-    contextWindowTokens: 1_048_576 + 65_536,
-    description:
-      'Gemini 2.5 Pro Experimental 是 Google 最先进的思维模型，能够对代码、数学和STEM领域的复杂问题进行推理，以及使用长上下文分析大型数据集、代码库和文档。',
-    displayName: 'Gemini 2.5 Pro Experimental 03-25',
-    enabled: true,
-    id: 'gemini-2.5-pro-exp-03-25',
-    maxOutput: 65_536,
-    pricing: {
-      input: 0,
-      output: 0,
-    },
-    releasedAt: '2025-03-25',
-    settings: {
-      searchImpl: 'params',
-      searchProvider: 'google',
-    },
-    type: 'chat',
-  },
-  {
-    abilities: {
-      functionCall: true,
-      reasoning: true,
-      search: true,
-      vision: true,
-    },
-    contextWindowTokens: 1_048_576 + 65_536,
     description:
       'Gemini 2.5 Pro 是 Google 最先进的思维模型，能够对代码、数学和STEM领域的复杂问题进行推理，以及使用长上下文分析大型数据集、代码库和文档。',
     displayName: 'Gemini 2.5 Pro',
@@ -66,9 +17,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.5-pro',
     maxOutput: 65_536,
     pricing: {
-      cachedInput: 0.31, // prompts <= 200k tokens
-      input: 1.25, // prompts <= 200k tokens
-      output: 10, // prompts <= 200k tokens
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.31, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-06-17',
     settings: {
@@ -92,9 +45,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.5-pro-preview-06-05',
     maxOutput: 65_536,
     pricing: {
-      cachedInput: 0.31, // prompts <= 200k tokens
-      input: 1.25, // prompts <= 200k tokens
-      output: 10, // prompts <= 200k tokens
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.31, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-06-05',
     settings: {
@@ -118,9 +73,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.5-pro-preview-05-06',
     maxOutput: 65_536,
     pricing: {
-      cachedInput: 0.31, // prompts <= 200k tokens
-      input: 1.25, // prompts <= 200k tokens
-      output: 10, // prompts <= 200k tokens
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.31, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-05-06',
     settings: {
@@ -143,9 +100,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.5-flash',
     maxOutput: 65_536,
     pricing: {
-      cachedInput: 0.075,
-      input: 0.3,
-      output: 2.5,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.075, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2.5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-06-17',
     settings: {
@@ -168,9 +127,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.5-flash-preview-05-20',
     maxOutput: 65_536,
     pricing: {
-      cachedInput: 0.0375,
-      input: 0.15,
-      output: 3.5, // Thinking
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.0375, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3.5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-05-20',
     settings: {
@@ -193,9 +154,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.5-flash-lite',
     maxOutput: 65_536,
     pricing: {
-      cachedInput: 0.025,
-      input: 0.1,
-      output: 0.4,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.025, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.4, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-07-22',
     settings: {
@@ -219,9 +182,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.5-flash-lite-preview-06-17',
     maxOutput: 65_536,
     pricing: {
-      cachedInput: 0.025,
-      input: 0.1,
-      output: 0.4,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.025, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.4, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-06-11',
     settings: {
@@ -244,9 +209,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.0-flash',
     maxOutput: 8192,
     pricing: {
-      cachedInput: 0.025,
-      input: 0.1,
-      output: 0.4,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.025, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.4, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-02-05',
     settings: {
@@ -268,9 +235,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.0-flash-001',
     maxOutput: 8192,
     pricing: {
-      cachedInput: 0.025,
-      input: 0.1,
-      output: 0.4,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.025, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.4, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-02-05',
     settings: {
@@ -291,8 +260,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.0-flash-preview-image-generation',
     maxOutput: 8192,
     pricing: {
-      input: 0.1,
-      output: 0.039, // per image
+      units: [
+        { name: 'textInput', rate: 0.1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.4, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'imageGeneration', rate: 0.039, strategy: 'fixed', unit: 'image' },
+      ],
     },
     releasedAt: '2025-05-07',
     type: 'chat',
@@ -308,8 +280,10 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.0-flash-exp-image-generation',
     maxOutput: 8192,
     pricing: {
-      input: 0,
-      output: 0,
+      units: [
+        { name: 'textInput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-03-14',
     type: 'chat',
@@ -324,8 +298,10 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.0-flash-lite',
     maxOutput: 8192,
     pricing: {
-      input: 0.075,
-      output: 0.3,
+      units: [
+        { name: 'textInput', rate: 0.075, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-02-05',
     type: 'chat',
@@ -340,8 +316,10 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.0-flash-lite-001',
     maxOutput: 8192,
     pricing: {
-      input: 0.075,
-      output: 0.3,
+      units: [
+        { name: 'textInput', rate: 0.075, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-02-05',
     type: 'chat',
@@ -357,8 +335,10 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-2.0-flash-exp',
     maxOutput: 8192,
     pricing: {
-      input: 0,
-      output: 0,
+      units: [
+        { name: 'textInput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2025-02-05',
     type: 'chat',
@@ -374,8 +354,10 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'learnlm-2.0-flash-experimental',
     maxOutput: 32_768,
     pricing: {
-      input: 0,
-      output: 0,
+      units: [
+        { name: 'textInput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     type: 'chat',
   },
@@ -390,8 +372,10 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'learnlm-1.5-pro-experimental',
     maxOutput: 8192,
     pricing: {
-      input: 0,
-      output: 0,
+      units: [
+        { name: 'textInput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2024-11-19',
     type: 'chat',
@@ -407,9 +391,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-1.5-flash-002', // Deprecated on 2025-09-24
     maxOutput: 8192,
     pricing: {
-      cachedInput: 0.018_75,
-      input: 0.075,
-      output: 0.3,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.018, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.075, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2024-09-25',
     type: 'chat',
@@ -426,9 +412,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-1.5-pro-002', // Deprecated on 2025-09-24
     maxOutput: 8192,
     pricing: {
-      cachedInput: 0.3125,
-      input: 1.25,
-      output: 5,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.3125, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2024-09-24',
     type: 'chat',
@@ -444,9 +432,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemini-1.5-flash-8b-latest',
     maxOutput: 8192,
     pricing: {
-      cachedInput: 0.01,
-      input: 0.0375,
-      output: 0.15,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.01, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.0375, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.15, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     releasedAt: '2024-10-03',
     type: 'chat',
@@ -457,9 +447,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemma-3-1b-it',
     maxOutput: 8192,
     pricing: {
-      cachedInput: 0,
-      input: 0,
-      output: 0,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     type: 'chat',
   },
@@ -469,9 +461,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemma-3-4b-it',
     maxOutput: 8192,
     pricing: {
-      cachedInput: 0,
-      input: 0,
-      output: 0,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     type: 'chat',
   },
@@ -481,9 +475,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemma-3-12b-it',
     maxOutput: 8192,
     pricing: {
-      cachedInput: 0,
-      input: 0,
-      output: 0,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     type: 'chat',
   },
@@ -493,9 +489,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemma-3-27b-it',
     maxOutput: 8192,
     pricing: {
-      cachedInput: 0,
-      input: 0,
-      output: 0,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     type: 'chat',
   },
@@ -505,9 +503,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemma-3n-e2b-it',
     maxOutput: 2048,
     pricing: {
-      cachedInput: 0,
-      input: 0,
-      output: 0,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     type: 'chat',
   },
@@ -517,9 +517,11 @@ const googleChatModels: AIChatModelCard[] = [
     id: 'gemma-3n-e4b-it',
     maxOutput: 2048,
     pricing: {
-      cachedInput: 0,
-      input: 0,
-      output: 0,
+      units: [
+        { name: 'textInput_cacheRead', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0, strategy: 'fixed', unit: 'millionTokens' },
+      ],
     },
     type: 'chat',
   },
