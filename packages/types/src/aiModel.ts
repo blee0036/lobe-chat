@@ -121,7 +121,8 @@ export type PricingUnitName =
   | 'audioInput_cacheRead' // corresponds to ChatModelPricing.cachedAudioInput
 
   // Image-based pricing units
-  | 'imageGeneration'; // for image generation models
+  | 'imageGeneration' // for image generation models
+  | 'imageOutput';
 
 export type PricingUnitType =
   | 'millionTokens' // per 1M tokens
@@ -326,7 +327,7 @@ export interface AiProviderModelListItem {
   displayName?: string;
   enabled: boolean;
   id: string;
-  parameters?: Record<string, any>;
+  parameters?: ModelParamsSchema;
   pricing?: Pricing;
   releasedAt?: string;
   settings?: AiModelSettings;
@@ -378,7 +379,7 @@ export interface EnabledAiModel {
   displayName?: string;
   enabled?: boolean;
   id: string;
-  parameters?: Record<string, any>;
+  parameters?: ModelParamsSchema;
   providerId: string;
   settings?: AiModelSettings;
   sort?: number;
