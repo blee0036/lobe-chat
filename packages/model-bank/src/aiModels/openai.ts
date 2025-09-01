@@ -1111,6 +1111,28 @@ export const openaiChatModels: AIChatModelCard[] = [
     id: 'deepseek-reasoner-az',
     type: 'chat',
   },
+  {
+    abilities: {
+      imageOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 32_768 + 8192,
+    description:
+      'Nano Banana 是 Google 最新、最快、最高效的原生多模态模型，它允许您通过对话生成和编辑图像。',
+    displayName: 'Nano Banana',
+    enabled: true,
+    id: 'gemini-2.5-flash-image-preview',
+    maxOutput: 8192,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2.5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'imageOutput', rate: 30, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-08-26',
+    type: 'chat',
+  },
 ];
 
 export const openaiEmbeddingModels: AIEmbeddingModelCard[] = [

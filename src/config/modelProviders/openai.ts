@@ -821,6 +821,17 @@ const OpenAI: ModelProviderCard = {
     },
     //gemini
     {
+      contextWindowTokens: 32_768 + 8192,
+      description:
+        'Nano Banana 是 Google 最新、最快、最高效的原生多模态模型，它允许您通过对话生成和编辑图像。',
+      displayName: 'Nano Banana',
+      enabled: true,
+      id: 'gemini-2.5-flash-image-preview',
+      maxOutput: 8192,
+      releasedAt: '2025-08-26',
+      vision: true,
+    },
+    {
       contextWindowTokens: 1_048_576 + 65_536,
       description: 'Gemini 2.5 Flash 是 Google 性价比最高的模型，提供全面的功能。',
       displayName: 'Gemini 2.5 Flash',
