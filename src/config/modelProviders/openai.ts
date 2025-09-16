@@ -594,6 +594,78 @@ const OpenAI: ModelProviderCard = {
     {
       contextWindowTokens: 200_000,
       description:
+        'Claude Opus 4.1 是 Anthropic 最新的用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+      displayName: '官Claude Opus 4.1',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-opus-4-1-guan-20250805',
+      maxOutput: 32_000,
+      releasedAt: '2025-08-05',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Opus 4.1 Extended thinking 是 Anthropic 最新的用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+      displayName: '官Claude Opus 4.1 Extended thinking',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-opus-4-1-guan-20250805-thinking',
+      maxOutput: 32_000,
+      releasedAt: '2025-08-05',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Opus 4 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+      displayName: '官Claude Opus 4',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-opus-4-guan-20250514',
+      maxOutput: 32_000,
+      releasedAt: '2025-05-23',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Opus 4 Extended thinking 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+      displayName: '官Claude Opus 4 Extended thinking',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-opus-4-guan-20250514-thinking',
+      maxOutput: 32_000,
+      releasedAt: '2025-05-23',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Sonnet 4 可以产生近乎即时的响应或延长的逐步思考，用户可以清晰地看到这些过程。API 用户还可以对模型思考的时间进行细致的控制',
+      displayName: '官Claude Sonnet 4',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-sonnet-4-guan-20250514',
+      maxOutput: 32_000,
+      releasedAt: '2025-05-23',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Sonnet 4 Extended thinking 可以产生近乎即时的响应或延长的逐步思考，用户可以清晰地看到这些过程。API 用户还可以对模型思考的时间进行细致的控制',
+      displayName: '官Claude Sonnet 4 Extended thinking',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-sonnet-4-guan-20250514-thinking',
+      maxOutput: 32_000,
+      releasedAt: '2025-05-23',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
         'Claude 3.7 sonnet 是 Anthropic 最快的下一代模型。与 Claude 3 Haiku 相比，Claude 3.7 Sonnet 在各项技能上都有所提升，并在许多智力基准测试中超越了上一代最大的模型 Claude 3 Opus。',
       displayName: '官Claude 3.7 Sonnet',
       enabled: true,
@@ -601,6 +673,7 @@ const OpenAI: ModelProviderCard = {
       id: 'claude-3-7-sonnet-guan-20250219',
       maxOutput: 8192,
       releasedAt: '2025-02-24',
+      vision: true,
     },
     {
       contextWindowTokens: 200_000,
@@ -612,6 +685,7 @@ const OpenAI: ModelProviderCard = {
       id: 'claude-3-7-sonnet-guan-20250219-thinking',
       maxOutput: 64_000,
       releasedAt: '2025-02-24',
+      vision: true,
     },
     {
       contextWindowTokens: 200_000,
@@ -623,6 +697,7 @@ const OpenAI: ModelProviderCard = {
       id: 'claude-3-5-haiku-guan-20241022',
       maxOutput: 8192,
       releasedAt: '2024-11-05',
+      vision: true,
     },
     {
       contextWindowTokens: 200_000,
