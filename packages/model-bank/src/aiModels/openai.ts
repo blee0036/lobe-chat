@@ -954,6 +954,62 @@ export const openaiChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
+      reasoning: true,
+      search: true,
+      vision: true,
+    },
+    contextWindowTokens: 200_000,
+    description: 'Claude Sonnet 4.5 是 Anthropic 迄今为止最智能的模型。',
+    displayName: '官Claude Sonnet 4.5',
+    enabled: true,
+    id: 'claude-sonnet-4-5-guan-20250929',
+    maxOutput: 64_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 3.75, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-09-30',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      vision: true,
+    },
+    contextWindowTokens: 200_000,
+    description: 'Claude Sonnet 4.5 Extended thinking 是 Anthropic 迄今为止最智能的模型。',
+    displayName: '官Claude Sonnet 4.5 Extended thinking',
+    enabled: true,
+    id: 'claude-sonnet-4-5-guan-20250929-thinking',
+    maxOutput: 64_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 3.75, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-09-30',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
       search: true,
       vision: true,
     },
@@ -1270,6 +1326,62 @@ export const openaiChatModels: AIChatModelCard[] = [
   },
   // 其他模型补全
   // claude
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      vision: true,
+    },
+    contextWindowTokens: 200_000,
+    description: 'Claude Sonnet 4.5 是 Anthropic 迄今为止最智能的模型。',
+    displayName: 'Claude Sonnet 4.5',
+    enabled: true,
+    id: 'claude-sonnet-4-5-20250929',
+    maxOutput: 64_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 3.75, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-09-30',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      vision: true,
+    },
+    contextWindowTokens: 200_000,
+    description: 'Claude Sonnet 4.5 Extended thinking 是 Anthropic 迄今为止最智能的模型。',
+    displayName: 'Claude Sonnet 4.5 Extended thinking',
+    enabled: true,
+    id: 'claude-sonnet-4-5-20250929-thinking',
+    maxOutput: 64_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 3.75, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-09-30',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
   {
     abilities: {
       functionCall: true,

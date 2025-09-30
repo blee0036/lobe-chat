@@ -469,6 +469,30 @@ const OpenAI: ModelProviderCard = {
     {
       contextWindowTokens: 200_000,
       description:
+        'Claude Sonnet 4.5 是 Anthropic 迄今为止最智能的模型。',
+      displayName: 'Claude Sonnet 4.5',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-sonnet-4-5-20250929',
+      maxOutput: 64_000,
+      releasedAt: '2025-09-30',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Sonnet 4.5 Extended thinking 是 Anthropic 迄今为止最智能的模型。',
+      displayName: 'Claude Sonnet 4.5 Extended thinking',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-sonnet-4-5-20250929-thinking',
+      maxOutput: 64_000,
+      releasedAt: '2025-09-30',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
         'Claude Opus 4.1 是 Anthropic 最新的用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
       displayName: 'Claude Opus 4.1',
       enabled: true,
@@ -625,6 +649,30 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-haiku-20240307',
       maxOutput: 4096,
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Sonnet 4.5 是 Anthropic 迄今为止最智能的模型。',
+      displayName: '官Claude Sonnet 4.5',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-sonnet-4-5-guan-20250929',
+      maxOutput: 64_000,
+      releasedAt: '2025-09-30',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Sonnet 4.5 Extended thinking 是 Anthropic 迄今为止最智能的模型。',
+      displayName: '官Claude Sonnet 4.5 Extended thinking',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-sonnet-4-5-guan-20250929-thinking',
+      maxOutput: 64_000,
+      releasedAt: '2025-09-30',
       vision: true,
     },
     {
