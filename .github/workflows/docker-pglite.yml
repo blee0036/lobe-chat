@@ -1,6 +1,4 @@
 name: Publish Docker Pglite Image
-permissions:
-  contents: read
 
 on:
   push:
