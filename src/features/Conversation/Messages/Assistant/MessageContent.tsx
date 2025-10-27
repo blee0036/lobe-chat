@@ -1,3 +1,4 @@
+import { UIChatMessage } from '@lobechat/types';
 import { ReactNode, memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
@@ -7,7 +8,6 @@ import ImageFileListViewer from '@/features/Conversation/Messages/User/ImageFile
 import VideoFileListViewer from '@/features/Conversation/Messages/User/VideoFileListViewer';
 import { useChatStore } from '@/store/chat';
 import { aiChatSelectors, chatSelectors } from '@/store/chat/selectors';
-import { ChatMessage } from '@/types/message';
 
 import { DefaultMessage } from '../Default';
 import FileChunks from './FileChunks';
@@ -17,7 +17,7 @@ import SearchGrounding from './SearchGrounding';
 import Tool from './Tool';
 
 export const AssistantMessageContent = memo<
-  ChatMessage & {
+  UIChatMessage & {
     editableContent: ReactNode;
   }
 >(({ id, tools, content, chunksList, search, imageList, videoList, children, ...props }) => {
