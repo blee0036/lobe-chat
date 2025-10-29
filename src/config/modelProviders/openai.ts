@@ -469,6 +469,30 @@ const OpenAI: ModelProviderCard = {
     {
       contextWindowTokens: 200_000,
       description:
+        'Claude Haiku 4.5 是 Anthropic 最快且最智能的 Haiku 模型，具有闪电般的速度和扩展思考能力。',
+      displayName: 'Claude Haiku 4.5',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-haiku-4-5-20251001',
+      maxOutput: 64_000,
+      releasedAt: '2025-10-16',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Haiku 4.5 Extended thinking 是 Anthropic 最快且最智能的 Haiku 模型，具有闪电般的速度和扩展思考能力。',
+      displayName: 'Claude Haiku 4.5 Extended thinking',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-haiku-4-5-20251001-thinking',
+      maxOutput: 64_000,
+      releasedAt: '2025-10-16',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
         'Claude Sonnet 4.5 是 Anthropic 迄今为止最智能的模型。',
       displayName: 'Claude Sonnet 4.5',
       enabled: true,
@@ -649,6 +673,30 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-haiku-20240307',
       maxOutput: 4096,
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Haiku 4.5 是 Anthropic 最快且最智能的 Haiku 模型，具有闪电般的速度和扩展思考能力。',
+      displayName: '官Claude Haiku 4.5',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-haiku-4-5-guan-20251001',
+      maxOutput: 64_000,
+      releasedAt: '2025-10-16',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Haiku 4.5 Extended thinking 是 Anthropic 最快且最智能的 Haiku 模型，具有闪电般的速度和扩展思考能力。',
+      displayName: '官Claude Haiku 4.5 Extended thinking',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-haiku-4-5-guan-20251001-thinking',
+      maxOutput: 64_000,
+      releasedAt: '2025-10-16',
       vision: true,
     },
     {
