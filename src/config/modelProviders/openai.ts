@@ -1028,6 +1028,18 @@ const OpenAI: ModelProviderCard = {
     },
     //gemini
     {
+      contextWindowTokens: 1_048_576 + 65_536,
+      description:
+        'Gemini 3.0 Pro Preview 是 Google 最先进的思维模型，能够对代码、数学和STEM领域的复杂问题进行推理，以及使用长上下文分析大型数据集、代码库和文档。',
+      displayName: 'Gemini 3.0 Pro Preview',
+      enabled: true,
+      functionCall: true,
+      id: 'gemini-3-pro-preview',
+      maxOutput: 65_536,
+      releasedAt: '2025-11-18',
+      vision: true,
+    },
+    {
       contextWindowTokens: 32_768 + 8192,
       description:
         'Nano Banana 是 Google 最新、最快、最高效的原生多模态模型，它允许您通过对话生成和编辑图像。',
@@ -1036,6 +1048,18 @@ const OpenAI: ModelProviderCard = {
       id: 'gemini-2.5-flash-image-preview',
       maxOutput: 8192,
       releasedAt: '2025-08-26',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 1_048_576 + 65_536,
+      description:
+        'Gemini 2.5 Pro 是 Google 最先进的思维模型，能够对代码、数学和STEM领域的复杂问题进行推理，以及使用长上下文分析大型数据集、代码库和文档。',
+      displayName: 'Gemini 2.5 Pro (Paid)',
+      enabled: true,
+      functionCall: true,
+      id: 'gemini-2.5-pro',
+      maxOutput: 65_536,
+      releasedAt: '2025-06-17',
       vision: true,
     },
     {
@@ -1070,18 +1094,6 @@ const OpenAI: ModelProviderCard = {
       id: 'gemini-2.5-flash-preview-05-20',
       maxOutput: 65_536,
       releasedAt: '2025-04-17',
-      vision: true,
-    },
-    {
-      contextWindowTokens: 1_048_576 + 65_536,
-      description:
-        'Gemini 2.5 Pro 是 Google 最先进的思维模型，能够对代码、数学和STEM领域的复杂问题进行推理，以及使用长上下文分析大型数据集、代码库和文档。',
-      displayName: 'Gemini 2.5 Pro (Paid)',
-      enabled: true,
-      functionCall: true,
-      id: 'gemini-2.5-pro',
-      maxOutput: 65_536,
-      releasedAt: '2025-06-17',
       vision: true,
     },
     {
