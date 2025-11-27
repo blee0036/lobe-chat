@@ -1045,7 +1045,7 @@ const OpenAI: ModelProviderCard = {
         'Nano Banana Pro 是 Google 最新、最快、最高效的原生多模态模型，它允许您通过对话生成和编辑图像。',
       displayName: 'Nano Banana Pro (Preview)',
       enabled: true,
-      id: 'gemini-3.0-pro-image-preview',
+      id: 'gemini-3-pro-image-preview',
       maxOutput: 8192,
       releasedAt: '2025-11-20',
       vision: true,

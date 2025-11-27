@@ -6,7 +6,7 @@ export const IMAGE_GENERATION_MODEL_WHITELIST = [
   'gemini-2.5-flash-image-preview',
   'gemini-2.5-flash-image-preview:free',
   'gemini-2.5-flash-image',
-  'gemini-3.0-pro-image-preview',
+  'gemini-3-pro-image-preview',
   // More models can be added in the future
 ] as const;
 
