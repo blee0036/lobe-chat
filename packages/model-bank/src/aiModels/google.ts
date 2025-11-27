@@ -366,7 +366,7 @@ const googleChatModels: AIChatModelCard[] = [
     description:
       'Nano Banana Pro 是 Google 最新、最快、最高效的原生多模态模型，它允许您通过对话生成和编辑图像。',
     displayName: 'Nano Banana Pro (Preview)',
-    id: 'gemini-3.0-flash-image-preview',
+    id: 'gemini-3.0-pro-image-preview',
     maxOutput: 8192,
     pricing: {
       units: [
