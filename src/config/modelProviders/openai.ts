@@ -469,6 +469,30 @@ const OpenAI: ModelProviderCard = {
     {
       contextWindowTokens: 200_000,
       description:
+        'Claude Opus 4.5 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+      displayName: 'Claude Opus 4.5',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-opus-4-5-20251101',
+      maxOutput: 64_000,
+      releasedAt: '2025-11-01',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Opus 4.5 Extended thinking 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+      displayName: 'Claude Opus 4.5 Extended thinking',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-opus-4-5-20251101-thinking',
+      maxOutput: 64_000,
+      releasedAt: '2025-11-01',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
         'Claude Haiku 4.5 是 Anthropic 最快且最智能的 Haiku 模型，具有闪电般的速度和扩展思考能力。',
       displayName: 'Claude Haiku 4.5',
       enabled: true,
@@ -673,6 +697,30 @@ const OpenAI: ModelProviderCard = {
       functionCall: true,
       id: 'claude-3-haiku-20240307',
       maxOutput: 4096,
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Opus 4.5 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+      displayName: '官Claude Opus 4.5',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-opus-4-5-guan-20251101',
+      maxOutput: 64_000,
+      releasedAt: '2025-11-01',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Opus 4.5 Extended thinking 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+      displayName: '官Claude Opus 4.5 Extended thinking',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-opus-4-5-guan-20251101-thinking',
+      maxOutput: 64_000,
+      releasedAt: '2025-11-01',
       vision: true,
     },
     {

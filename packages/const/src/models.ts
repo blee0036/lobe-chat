@@ -41,6 +41,7 @@ export const responsesAPIModels = new Set([
  * models support context caching
  */
 export const contextCachingModels = new Set([
+  'claude-opus-4-5-20251101',
   'claude-haiku-4-5-20251001',
   'claude-sonnet-4-5-latest',
   'claude-sonnet-4-5-20250929',
