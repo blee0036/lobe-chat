@@ -26,6 +26,156 @@ export const openaiChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 400_000,
+    description: 'GPT-5.2 pro 使用更多计算来更深入地思考，并持续提供更好的答案。',
+    displayName: 'GPT-5.2 pro',
+    id: 'gpt-5.2-pro',
+    maxOutput: 272_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 120, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-10-06',
+    settings: {
+      extendParams: ['textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description:
+      '跨领域编码和代理任务的最佳模型。GPT-5.2 在准确性、速度、推理、上下文识别、结构化思维和问题解决方面实现了飞跃。',
+    displayName: 'GPT-5.2',
+    enabled: true,
+    id: 'gpt-5.2',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.125, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-08-07',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description:
+      'ChatGPT 中使用的 GPT-5.2 模型。结合了强大的语言理解与生成能力，适合对话式交互应用。',
+    displayName: 'GPT-5.2 Chat',
+    enabled: true,
+    id: 'gpt-5.2-chat-latest',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.125, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-08-07',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description:
+      '跨领域编码和代理任务的最佳模型。GPT-5.1 在准确性、速度、推理、上下文识别、结构化思维和问题解决方面实现了飞跃。',
+    displayName: 'GPT-5.1',
+    enabled: true,
+    id: 'gpt-5.1',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.125, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-08-07',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description: 'GPT-5.1 Codex Max 使用更多计算来更深入地思考，并持续提供更好的答案。',
+    displayName: 'GPT-5.1 Codex Max',
+    id: 'gpt-5.1-codex-max',
+    maxOutput: 272_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 120, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-10-06',
+    settings: {
+      extendParams: ['textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description:
+      'ChatGPT 中使用的 GPT-5.1 模型。结合了强大的语言理解与生成能力，适合对话式交互应用。',
+    displayName: 'GPT-5.1 Chat',
+    enabled: true,
+    id: 'gpt-5.1-chat-latest',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.125, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-08-07',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
     description: 'GPT-5 pro 使用更多计算来更深入地思考，并持续提供更好的答案。',
     displayName: 'GPT-5 pro',
     id: 'gpt-5-pro',
