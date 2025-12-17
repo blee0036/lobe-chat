@@ -98,7 +98,7 @@ export const params = {
         const reasoning = payload.reasoning
           ? { ...payload.reasoning, summary: 'auto' }
           : { summary: 'auto' };
-        if (model.startsWith('gpt-5-pro')) {
+        if (model.startsWith('gpt-5-pro') || model.startsWith('gpt-5.2-pro')) {
           reasoning.effort = 'high';
         }
         return pruneReasoningPayload({
