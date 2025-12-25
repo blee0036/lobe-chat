@@ -1215,6 +1215,18 @@ const OpenAI: ModelProviderCard = {
       vision: true,
     },
     {
+      contextWindowTokens: 1_048_576 + 65_536,
+      description:
+        'Gemini 3.0 Flash Preview 是 Google 性价比最高的模型，提供全面的功能。',
+      displayName: 'Gemini 3.0 Flash Preview',
+      enabled: true,
+      functionCall: true,
+      id: 'gemini-3-flash-preview',
+      maxOutput: 65_536,
+      releasedAt: '2025-11-18',
+      vision: true,
+    },
+    {
       contextWindowTokens: 32_768 + 8192,
       description:
         'Nano Banana Pro 是 Google 最新、最快、最高效的原生多模态模型，它允许您通过对话生成和编辑图像。',
