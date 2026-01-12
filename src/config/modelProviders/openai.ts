@@ -61,19 +61,21 @@ const OpenAI: ModelProviderCard = {
     },
     {
       contextWindowTokens: 400_000,
-      description: 'GPT-5.1 Codex Max 使用更多计算来更深入地思考，并持续提供更好的答案。',
-      displayName: 'GPT-5.1 Codex Max',
+      description:
+        'ChatGPT 中使用的 GPT-5 模型。结合了强大的语言理解与生成能力，适合对话式交互应用。',
+      displayName: 'GPT-5.2 Chat',
       enabled: true,
       functionCall: true,
-      id: 'gpt-5.1-codex-max',
-      maxOutput: 272_000,
+      id: 'gpt-5.2-chat',
+      maxOutput: 128_000,
       pricing: {
         units: [
-          { name: 'textInput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
-          { name: 'textOutput', rate: 120, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textInput_cacheRead', rate: 0.125, strategy: 'fixed', unit: 'millionTokens' },
         ],
       },
-      releasedAt: '2025-10-06',
+      releasedAt: '2025-08-07',
       vision: true,
     },
     {
@@ -93,6 +95,57 @@ const OpenAI: ModelProviderCard = {
         ],
       },
       releasedAt: '2025-08-07',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 400_000,
+      description: 'GPT-5.1 Codex Max 使用更多计算来更深入地思考，并持续提供更好的答案。',
+      displayName: 'GPT-5.1 Codex Max',
+      enabled: true,
+      functionCall: true,
+      id: 'gpt-5.1-codex-max',
+      maxOutput: 272_000,
+      pricing: {
+        units: [
+          { name: 'textInput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 120, strategy: 'fixed', unit: 'millionTokens' },
+        ],
+      },
+      releasedAt: '2025-10-06',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 400_000,
+      description: 'GPT-5.1 Codex',
+      displayName: 'GPT-5.1 Codex',
+      enabled: true,
+      functionCall: true,
+      id: 'gpt-5.1-codex',
+      maxOutput: 272_000,
+      pricing: {
+        units: [
+          { name: 'textInput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 120, strategy: 'fixed', unit: 'millionTokens' },
+        ],
+      },
+      releasedAt: '2025-10-06',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 400_000,
+      description: 'GPT-5.1 Codex Mini',
+      displayName: 'GPT-5.1 Codex Mini',
+      enabled: true,
+      functionCall: true,
+      id: 'gpt-5.1-codex-mini',
+      maxOutput: 272_000,
+      pricing: {
+        units: [
+          { name: 'textInput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
+          { name: 'textOutput', rate: 120, strategy: 'fixed', unit: 'millionTokens' },
+        ],
+      },
+      releasedAt: '2025-10-06',
       vision: true,
     },
     {

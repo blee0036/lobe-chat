@@ -79,9 +79,30 @@ export const openaiChatModels: AIChatModelCard[] = [
     contextWindowTokens: 400_000,
     description:
       'ChatGPT 中使用的 GPT-5.2 模型。结合了强大的语言理解与生成能力，适合对话式交互应用。',
-    displayName: 'GPT-5.2 Chat',
+    displayName: 'GPT-5.2 Chat Latest',
     enabled: true,
     id: 'gpt-5.2-chat-latest',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.125, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-08-07',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description:
+      'ChatGPT 中使用的 GPT-5.2 模型。结合了强大的语言理解与生成能力，适合对话式交互应用。',
+    displayName: 'GPT-5.2 Chat',
+    enabled: true,
+    id: 'gpt-5.2-chat',
     maxOutput: 128_000,
     pricing: {
       units: [
@@ -143,6 +164,64 @@ export const openaiChatModels: AIChatModelCard[] = [
     releasedAt: '2025-10-06',
     settings: {
       extendParams: ['textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description:
+      'GPT-5.1 Codex',
+    displayName: 'GPT-5.1 Codex',
+    enabled: true,
+    id: 'gpt-5.1-codex',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.125, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-08-07',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description:
+      'GPT-5.1 Codex Mini',
+    displayName: 'GPT-5.1 Codex Mini',
+    enabled: true,
+    id: 'gpt-5.1-codex-mini',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.125, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-08-07',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
       searchImpl: 'params',
     },
     type: 'chat',
