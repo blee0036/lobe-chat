@@ -3165,7 +3165,49 @@ export const openaiChatModels: AIChatModelCard[] = [
     releasedAt: '2025-08-21',
     type: 'chat',
   },
-
+  //grok
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 2_000_000,
+    description: 'A frontier multimodal model optimized for high-performance agent tool use.',
+    displayName: 'Grok 4.1 Fast',
+    enabled: true,
+    id: 'grok-4-1-fast',
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.05, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          name: 'textInput',
+          strategy: 'tiered',
+          tiers: [
+            { rate: 0.2, upTo: 0.128 },
+            { rate: 0.4, upTo: 'infinity' },
+          ],
+          unit: 'millionTokens',
+        },
+        {
+          name: 'textOutput',
+          strategy: 'tiered',
+          tiers: [
+            { rate: 0.5, upTo: 0.128 },
+            { rate: 1, upTo: 'infinity' },
+          ],
+          unit: 'millionTokens',
+        },
+      ],
+    },
+    releasedAt: '2025-11-20',
+    settings: {
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
   //cohere 官方
   {
     abilities: {

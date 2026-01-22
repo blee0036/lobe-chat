@@ -1596,6 +1596,17 @@ const OpenAI: ModelProviderCard = {
     },
     // grok
     {
+      contextWindowTokens: 2_000_000,
+      description: 'A frontier multimodal model optimized for high-performance agent tool use.',
+      displayName: 'Grok 4.1 Fast',
+      enabled: true,
+      functionCall: true,
+      id: 'grok-4-1-fast',
+      maxOutput: 30_000,
+      releasedAt: '2025-11-20',
+      vision: true
+    },
+    {
       contextWindowTokens: 131_072,
       description: '拥有与 Grok 2 相当的性能，但具有更高的效率、速度和功能。',
       displayName: 'Grok Beta',
