@@ -3165,6 +3165,7 @@ export const openaiChatModels: AIChatModelCard[] = [
     releasedAt: '2025-08-21',
     type: 'chat',
   },
+
   //grok
   {
     abilities: {
@@ -6782,3 +6783,4 @@ export const allModels = [
 ];
 
 export default allModels;
+
