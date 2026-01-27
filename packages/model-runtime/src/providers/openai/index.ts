@@ -31,9 +31,26 @@ export const params = {
   chatCompletion: {
     handlePayload: (payload) => {
       const { enabledSearch, model, ...rest } = payload;
+      const isGeminiSearch = enabledSearch && model.startsWith('gemini');
 
-      if (responsesAPIModels.has(model) || enabledSearch) {
+      if (!isGeminiSearch && (responsesAPIModels.has(model) || enabledSearch)) {
         return { ...rest, apiMode: 'responses', enabledSearch, model } as ChatStreamPayload;
+      }
+
+      if (isGeminiSearch) {
+        const geminiSearchTools = [
+          ...(rest.tools || []),
+          { name: 'googleSearch' },
+          { name: 'urlContext' },
+        ];
+
+        return {
+          ...rest,
+          model,
+          ...(enableServiceTierFlex && supportsFlexTier(model) && { service_tier: 'flex' }),
+          stream: payload.stream ?? true,
+          tools: geminiSearchTools as any,
+        } as any;
       }
 
       if (prunePrefixes.some((prefix) => model.startsWith(prefix))) {
