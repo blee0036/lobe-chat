@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  REGISTRY_IMAGE: ghcr.io/blee0036/lobe-customV2
+  REGISTRY_IMAGE: ghcr.io/blee0036/lobe-customv2
   REGISTRY: ghcr.io
   PR_TAG_PREFIX: pr-
 
