@@ -40,8 +40,8 @@ export const params = {
       if (isGeminiSearch) {
         const geminiSearchTools = [
           ...(rest.tools || []),
-          { name: 'googleSearch' },
-          { name: 'urlContext' },
+          { function: { name: 'googleSearch' }, type: 'function' },
+          { function: { name: 'urlContext' }, type: 'function' },
         ];
 
         return {
