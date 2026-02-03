@@ -666,6 +666,10 @@ export default {
     'Once filled out, the system agent will use the custom prompt when generating content',
   'systemAgent.customPrompt.placeholder': 'Please enter custom prompt',
   'systemAgent.customPrompt.title': 'Custom Prompt',
+  'systemAgent.followSystem.desc':
+    'Use the server-defined SYSTEM_AGENT configuration for all system agents.',
+  'systemAgent.followSystem.group': 'System Agent Source',
+  'systemAgent.followSystem.title': 'Follow System',
   'systemAgent.generationTopic.label': 'Model',
   'systemAgent.generationTopic.modelDesc': 'Model designated for automatic naming of AI art topics',
   'systemAgent.generationTopic.title': 'AI Art Topic Naming Agent',
@@ -675,10 +679,6 @@ export default {
   'systemAgent.historyCompress.modelDesc':
     'Specify the model used to compress conversation history',
   'systemAgent.historyCompress.title': 'Conversation History Compression Agent',
-  'systemAgent.followSystem.group': 'System Agent Source',
-  'systemAgent.followSystem.title': 'Follow System',
-  'systemAgent.followSystem.desc':
-    'Use the server-defined SYSTEM_AGENT configuration for all system agents.',
   'systemAgent.queryRewrite.label': 'Model',
   'systemAgent.queryRewrite.modelDesc': 'Specify the model used to optimize user inquiries',
   'systemAgent.queryRewrite.title': 'Library query rewrite Agent',

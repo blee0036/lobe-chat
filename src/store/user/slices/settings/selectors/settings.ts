@@ -60,7 +60,6 @@ export const settingsSelectors = {
   currentMemorySettings,
   currentSettings,
   currentSystemAgent,
-  systemAgentFollowSystem,
   currentTTS,
   defaultAgent,
   defaultAgentConfig,
@@ -69,4 +68,5 @@ export const settingsSelectors = {
   getHotkeyById,
   memoryEnabled,
   providerConfig: getProviderConfigById,
+  systemAgentFollowSystem,
 };

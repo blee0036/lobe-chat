@@ -27,7 +27,8 @@ interface ModelOption {
   value: string;
 }
 
-interface ModelSelectProps extends Pick<LobeSelectProps, 'loading' | 'size' | 'style' | 'variant'> {
+interface ModelSelectProps
+  extends Pick<LobeSelectProps, 'disabled' | 'loading' | 'size' | 'style' | 'variant'> {
   defaultValue?: { model: string; provider?: string };
   initialWidth?: boolean;
   onChange?: (props: { model: string; provider: string }) => void;
@@ -45,6 +46,7 @@ const ModelSelect = memo<ModelSelectProps>(
     initialWidth = false,
     showAbility = true,
     requiredAbilities,
+    disabled,
     loading,
     popupWidth,
     size,
@@ -101,6 +103,7 @@ const ModelSelect = memo<ModelSelectProps>(
       <TooltipGroup>
         <LobeSelect
           defaultValue={`${value?.provider}/${value?.model}`}
+          disabled={disabled}
           loading={loading}
           onChange={(value, option) => {
             if (!value) return;

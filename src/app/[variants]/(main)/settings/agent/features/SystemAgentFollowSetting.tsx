@@ -1,4 +1,4 @@
-\'use client\';
+'use client';
 
 import { Form, type FormGroupItemType, Icon, Skeleton } from '@lobehub/ui';
 import { Switch } from 'antd';
