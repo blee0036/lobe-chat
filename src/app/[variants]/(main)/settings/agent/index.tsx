@@ -16,8 +16,8 @@ const Page = () => {
   return (
     <>
       <SettingHeader title={t('tab.agent')} />
-      <DefaultAgentForm />
       <SystemAgentFollowSetting />
+      <DefaultAgentForm />
       <SystemAgentForm systemAgentKey="topic" />
       <SystemAgentForm systemAgentKey="generationTopic" />
       <SystemAgentForm systemAgentKey="translation" />

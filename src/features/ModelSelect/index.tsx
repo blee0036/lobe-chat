@@ -61,8 +61,8 @@ const ModelSelect = memo<ModelSelectProps>(
         const models =
           requiredAbilities && requiredAbilities.length > 0
             ? provider.children.filter((model) =>
-                requiredAbilities.every((ability) => Boolean(model.abilities?.[ability])),
-              )
+              requiredAbilities.every((ability) => Boolean(model.abilities?.[ability])),
+            )
             : provider.children;
 
         return models.map((model) => ({
@@ -102,7 +102,6 @@ const ModelSelect = memo<ModelSelectProps>(
     return (
       <TooltipGroup>
         <LobeSelect
-          defaultValue={`${value?.provider}/${value?.model}`}
           disabled={disabled}
           loading={loading}
           onChange={(value, option) => {

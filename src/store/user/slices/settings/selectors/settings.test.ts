@@ -201,6 +201,7 @@ describe('settingsSelectors', () => {
   describe('currentSystemAgent', () => {
     it('should merge DEFAULT_SYSTEM_AGENT_CONFIG and s.settings.systemAgent correctly', () => {
       const s = {
+        defaultSettings: {},
         settings: {
           systemAgent: {
             enableAutoReply: true,

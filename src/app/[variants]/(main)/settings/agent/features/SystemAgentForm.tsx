@@ -50,7 +50,7 @@ const SystemAgentForm = memo(
                 setLoading(false);
               }}
               showAbility={false}
-              // value={value}
+              value={value}
             />
           ),
           desc: t(`systemAgent.${systemAgentKey}.modelDesc`),

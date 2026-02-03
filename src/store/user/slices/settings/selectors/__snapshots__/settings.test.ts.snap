@@ -54,8 +54,8 @@ exports[`settingsSelectors > currentSystemAgent > should merge DEFAULT_SYSTEM_AG
     "model": "claude-sonnet-4-5-20250929",
     "provider": "anthropic",
   },
-  "followSystem": false,
   "enableAutoReply": true,
+  "followSystem": true,
   "generationTopic": {
     "model": "gpt-5-mini",
     "provider": "openai",
