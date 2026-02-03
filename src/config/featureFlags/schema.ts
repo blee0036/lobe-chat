@@ -128,7 +128,7 @@ export const mapFeatureFlagsEnvToState = (config: IFeatureFlags, userId?: string
     enablePlugins: evaluateFeatureFlag(config.plugins, userId),
     showDalle: evaluateFeatureFlag(config.dalle, userId),
     showAiImage: evaluateFeatureFlag(config.ai_image, userId),
-    showChangelog: evaluateFeatureFlag(config.changelog, userId),
+    showChangelog: false,
 
     enableCheckUpdates: evaluateFeatureFlag(config.check_updates, userId),
     showWelcomeSuggest: evaluateFeatureFlag(config.welcome_suggest, userId),
@@ -143,8 +143,8 @@ export const mapFeatureFlagsEnvToState = (config: IFeatureFlags, userId?: string
     showMarket: evaluateFeatureFlag(config.market, userId),
     enableSTT: evaluateFeatureFlag(config.speech_to_text, userId),
 
-    hideGitHub: evaluateFeatureFlag(config.commercial_hide_github, userId),
-    hideDocs: evaluateFeatureFlag(config.commercial_hide_docs, userId),
+    hideGitHub: true,
+    hideDocs: true,
   };
 };
 
