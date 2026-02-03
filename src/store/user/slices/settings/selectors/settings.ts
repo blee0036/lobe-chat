@@ -42,12 +42,29 @@ const defaultAgentMeta = (s: UserStore) => merge(DEFAULT_AGENT_META, defaultAgen
 
 const exportSettings = currentSettings;
 
-const systemAgentFollowSystem = (s: UserStore) =>
-  currentSettings(s).systemAgent?.followSystem === true;
+const systemAgentFollowSystem = (s: UserStore) => {
+  const followSystem = currentSettings(s).systemAgent?.followSystem;
+  // If followSystem is undefined, use the default value (true)
+  // Only return false if explicitly set to false
+  return followSystem !== false;
+};
 
 const currentSystemAgent = (s: UserStore) => {
   const serverSystemAgent = merge(DEFAULT_SYSTEM_AGENT_CONFIG, s.defaultSettings.systemAgent);
-  if (systemAgentFollowSystem(s)) return serverSystemAgent;
+  const followSystem = systemAgentFollowSystem(s);
+
+  // Debug logging
+  if (typeof window !== 'undefined' && process.env.NODE_ENV === 'development') {
+    console.log('[SystemAgent Debug]', {
+      followSystem,
+      'defaultSettings.systemAgent': s.defaultSettings.systemAgent,
+      'settings.systemAgent': s.settings.systemAgent,
+      'currentSettings.systemAgent': currentSettings(s).systemAgent,
+      serverSystemAgent,
+    });
+  }
+
+  if (followSystem) return serverSystemAgent;
 
   return merge(DEFAULT_SYSTEM_AGENT_CONFIG, currentSettings(s).systemAgent);
 };
