@@ -27,6 +27,7 @@ const SystemAgentForm = memo(
     const { t } = useTranslation('setting');
     const [form] = AntForm.useForm();
     const settings = useUserStore(settingsSelectors.currentSystemAgent, isEqual);
+    const followSystem = useUserStore(settingsSelectors.systemAgentFollowSystem);
     const [updateSystemAgent, isUserStateInit] = useUserStore((s) => [
       s.updateSystemAgent,
       s.isUserStateInit,
@@ -42,6 +43,7 @@ const SystemAgentForm = memo(
         {
           children: (
             <ModelSelect
+              disabled={followSystem}
               onChange={async (props) => {
                 setLoading(true);
                 await updateSystemAgent(systemAgentKey, props);
@@ -58,6 +60,7 @@ const SystemAgentForm = memo(
         (!!allowCustomPrompt && {
           children: !!value.customPrompt ? (
             <TextArea
+              disabled={followSystem}
               onBlur={async (e) => {
                 setLoading(true);
                 await updateSystemAgent(systemAgentKey, { customPrompt: e.target.value });
@@ -70,6 +73,7 @@ const SystemAgentForm = memo(
           ) : (
             <Button
               block
+              disabled={followSystem}
               icon={PencilIcon}
               onClick={async () => {
                 setLoading(true);
@@ -90,6 +94,7 @@ const SystemAgentForm = memo(
           {loading && <Icon icon={Loader2Icon} size={16} spin style={{ opacity: 0.5 }} />}
           {allowDisable && (
             <Switch
+              disabled={followSystem}
               onChange={async (enabled) => {
                 setLoading(true);
                 await updateSystemAgent(systemAgentKey, { enabled });

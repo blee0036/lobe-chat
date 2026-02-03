@@ -42,8 +42,15 @@ const defaultAgentMeta = (s: UserStore) => merge(DEFAULT_AGENT_META, defaultAgen
 
 const exportSettings = currentSettings;
 
-const currentSystemAgent = (s: UserStore) =>
-  merge(DEFAULT_SYSTEM_AGENT_CONFIG, currentSettings(s).systemAgent);
+const systemAgentFollowSystem = (s: UserStore) =>
+  currentSettings(s).systemAgent?.followSystem === true;
+
+const currentSystemAgent = (s: UserStore) => {
+  const serverSystemAgent = merge(DEFAULT_SYSTEM_AGENT_CONFIG, s.defaultSettings.systemAgent);
+  if (systemAgentFollowSystem(s)) return serverSystemAgent;
+
+  return merge(DEFAULT_SYSTEM_AGENT_CONFIG, currentSettings(s).systemAgent);
+};
 
 const getHotkeyById = (id: HotkeyId) => (s: UserStore) =>
   merge(DEFAULT_HOTKEY_CONFIG, currentSettings(s).hotkey)[id];
@@ -53,6 +60,7 @@ export const settingsSelectors = {
   currentMemorySettings,
   currentSettings,
   currentSystemAgent,
+  systemAgentFollowSystem,
   currentTTS,
   defaultAgent,
   defaultAgentConfig,

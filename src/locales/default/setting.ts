@@ -675,6 +675,10 @@ export default {
   'systemAgent.historyCompress.modelDesc':
     'Specify the model used to compress conversation history',
   'systemAgent.historyCompress.title': 'Conversation History Compression Agent',
+  'systemAgent.followSystem.group': 'System Agent Source',
+  'systemAgent.followSystem.title': 'Follow System',
+  'systemAgent.followSystem.desc':
+    'Use the server-defined SYSTEM_AGENT configuration for all system agents.',
   'systemAgent.queryRewrite.label': 'Model',
   'systemAgent.queryRewrite.modelDesc': 'Specify the model used to optimize user inquiries',
   'systemAgent.queryRewrite.title': 'Library query rewrite Agent',

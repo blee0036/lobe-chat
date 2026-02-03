@@ -7,6 +7,7 @@ import SettingHeader from '@/app/[variants]/(main)/settings/features/SettingHead
 import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
 
 import DefaultAgentForm from './features/DefaultAgentForm';
+import SystemAgentFollowSetting from './features/SystemAgentFollowSetting';
 import SystemAgentForm from './features/SystemAgentForm';
 
 const Page = () => {
@@ -16,6 +17,7 @@ const Page = () => {
     <>
       <SettingHeader title={t('tab.agent')} />
       <DefaultAgentForm />
+      <SystemAgentFollowSetting />
       <SystemAgentForm systemAgentKey="topic" />
       <SystemAgentForm systemAgentKey="generationTopic" />
       <SystemAgentForm systemAgentKey="translation" />

@@ -1,7 +1,9 @@
 import { DEFAULT_SYSTEM_AGENT_CONFIG } from '@/const/settings';
 import { type UserSystemAgentConfig } from '@/types/user/settings';
 
-const protectedKeys = Object.keys(DEFAULT_SYSTEM_AGENT_CONFIG);
+const protectedKeys = Object.keys(DEFAULT_SYSTEM_AGENT_CONFIG).filter(
+  (key) => key !== 'followSystem',
+);
 
 const defaultTrueLey = new Set(['queryRewrite', 'autoSuggestion']);
 

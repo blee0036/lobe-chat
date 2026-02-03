@@ -13,10 +13,11 @@ export interface UserSystemAgentConfig {
   agentMeta: SystemAgentItem;
   generationTopic: SystemAgentItem;
   historyCompress: SystemAgentItem;
+  followSystem?: boolean;
   queryRewrite: QueryRewriteSystemAgent;
   thread: SystemAgentItem;
   topic: SystemAgentItem;
   translation: SystemAgentItem;
 }
 
-export type UserSystemAgentConfigKey = keyof UserSystemAgentConfig;
+export type UserSystemAgentConfigKey = Exclude<keyof UserSystemAgentConfig, 'followSystem'>;

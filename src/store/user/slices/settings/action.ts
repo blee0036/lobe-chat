@@ -36,6 +36,7 @@ export interface UserSettingsAction {
     key: UserSystemAgentConfigKey,
     value: Partial<SystemAgentItem>,
   ) => Promise<void>;
+  updateSystemAgentFollowSystem: (followSystem: boolean) => Promise<void>;
 }
 
 export const createSettingsSlice: StateCreator<
@@ -140,6 +141,11 @@ export const createSettingsSlice: StateCreator<
   updateSystemAgent: async (key, value) => {
     await get().setSettings({
       systemAgent: { [key]: { ...value } },
+    });
+  },
+  updateSystemAgentFollowSystem: async (followSystem) => {
+    await get().setSettings({
+      systemAgent: { followSystem },
     });
   },
 });
