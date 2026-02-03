@@ -5,12 +5,19 @@ import { set } from 'es-toolkit/compat';
  * @param {string} envStr - The environment variable string to be parsed.
  */
 export const parseAgentConfig = (envStr: string) => {
+  // Remove surrounding quotes if present (handles both single and double quotes)
+  let cleanedEnvStr = envStr.trim();
+  if ((cleanedEnvStr.startsWith('"') && cleanedEnvStr.endsWith('"')) ||
+    (cleanedEnvStr.startsWith("'") && cleanedEnvStr.endsWith("'"))) {
+    cleanedEnvStr = cleanedEnvStr.slice(1, -1);
+  }
+
   const config = {};
   // use regex to match key-value pairs, considering the possibility of semicolons in values
   const regex = /([^;=]+)=("[^"]+"|[^;]+)/g;
   let match;
 
-  while ((match = regex.exec(envStr)) !== null) {
+  while ((match = regex.exec(cleanedEnvStr)) !== null) {
     const key = match[1].trim();
     let value = match[2].trim();
     if (!key || !value) return;

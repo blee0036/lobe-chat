@@ -11,7 +11,14 @@ export const parseSSOProviders = (providersEnv?: string): string[] => {
     return [];
   }
 
-  return providers
+  // Remove surrounding quotes if present (handles both single and double quotes)
+  let cleanedProviders = providers;
+  if ((cleanedProviders.startsWith('"') && cleanedProviders.endsWith('"')) ||
+    (cleanedProviders.startsWith("'") && cleanedProviders.endsWith("'"))) {
+    cleanedProviders = cleanedProviders.slice(1, -1);
+  }
+
+  return cleanedProviders
     .split(/[,，]/)
     .map((p) => p.trim())
     .filter(Boolean);

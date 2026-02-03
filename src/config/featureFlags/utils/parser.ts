@@ -10,8 +10,15 @@ export function parseFeatureFlag(flagString?: string): Partial<IFeatureFlags> {
 
   if (!flagString) return flags;
 
+  // Remove surrounding quotes if present (handles both single and double quotes)
+  let cleanedFlagString = flagString.trim();
+  if ((cleanedFlagString.startsWith('"') && cleanedFlagString.endsWith('"')) ||
+    (cleanedFlagString.startsWith("'") && cleanedFlagString.endsWith("'"))) {
+    cleanedFlagString = cleanedFlagString.slice(1, -1);
+  }
+
   // 将中文逗号替换为英文逗号,并按逗号分割字符串
-  const flagArray = flagString.trim().replaceAll('，', ',').split(',');
+  const flagArray = cleanedFlagString.trim().replaceAll('，', ',').split(',');
 
   for (let flag of flagArray) {
     flag = flag.trim();

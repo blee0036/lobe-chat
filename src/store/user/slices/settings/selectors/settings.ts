@@ -53,17 +53,6 @@ const currentSystemAgent = (s: UserStore) => {
   const serverSystemAgent = merge(DEFAULT_SYSTEM_AGENT_CONFIG, s.defaultSettings.systemAgent);
   const followSystem = systemAgentFollowSystem(s);
 
-  // Always log for debugging
-  console.log('[SystemAgent Debug] ===== START =====');
-  console.log('[SystemAgent Debug] followSystem:', followSystem);
-  console.log('[SystemAgent Debug] s.defaultSettings.systemAgent:', JSON.stringify(s.defaultSettings.systemAgent, null, 2));
-  console.log('[SystemAgent Debug] s.settings.systemAgent:', JSON.stringify(s.settings.systemAgent, null, 2));
-  console.log('[SystemAgent Debug] currentSettings(s).systemAgent:', JSON.stringify(currentSettings(s).systemAgent, null, 2));
-  console.log('[SystemAgent Debug] serverSystemAgent (merged):', JSON.stringify(serverSystemAgent, null, 2));
-  console.log('[SystemAgent Debug] DEFAULT_SYSTEM_AGENT_CONFIG:', JSON.stringify(DEFAULT_SYSTEM_AGENT_CONFIG, null, 2));
-  console.log('[SystemAgent Debug] Will return:', followSystem ? 'serverSystemAgent' : 'merged with user settings');
-  console.log('[SystemAgent Debug] ===== END =====');
-
   if (followSystem) return serverSystemAgent;
 
   return merge(DEFAULT_SYSTEM_AGENT_CONFIG, currentSettings(s).systemAgent);

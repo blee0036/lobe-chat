@@ -10,10 +10,18 @@ const protectedKeys = Object.keys({
 
 export const parseFilesConfig = (envString: string = ''): SystemEmbeddingConfig => {
   if (!envString) return DEFAULT_FILES_CONFIG;
+
+  // Remove surrounding quotes if present (handles both single and double quotes)
+  let cleanedEnvString = envString.trim();
+  if ((cleanedEnvString.startsWith('"') && cleanedEnvString.endsWith('"')) ||
+    (cleanedEnvString.startsWith("'") && cleanedEnvString.endsWith("'"))) {
+    cleanedEnvString = cleanedEnvString.slice(1, -1);
+  }
+
   const config: FilesConfig = {} as any;
 
   // Handle full-width commas and extra spaces
-  let envValue = envString.replaceAll('，', ',').trim();
+  let envValue = cleanedEnvString.replaceAll('，', ',').trim();
 
   const pairs = envValue.split(',');
 

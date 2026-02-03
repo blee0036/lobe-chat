@@ -107,13 +107,7 @@ export const createCommonSlice: StateCreator<
               systemAgent: serverConfig.systemAgent,
             };
 
-            console.log('[useInitUserState] serverConfig.systemAgent:', JSON.stringify(serverConfig.systemAgent, null, 2));
-            console.log('[useInitUserState] serverSettings:', JSON.stringify(serverSettings, null, 2));
-            console.log('[useInitUserState] data.settings:', JSON.stringify(data.settings, null, 2));
-
             const defaultSettings = merge(get().defaultSettings, serverSettings);
-
-            console.log('[useInitUserState] defaultSettings after merge:', JSON.stringify(defaultSettings, null, 2));
 
             // merge preference
             const isEmpty = Object.keys(data.preference || {}).length === 0;
