@@ -107,7 +107,13 @@ export const createCommonSlice: StateCreator<
               systemAgent: serverConfig.systemAgent,
             };
 
+            console.log('[useInitUserState] serverConfig.systemAgent:', JSON.stringify(serverConfig.systemAgent, null, 2));
+            console.log('[useInitUserState] serverSettings:', JSON.stringify(serverSettings, null, 2));
+            console.log('[useInitUserState] data.settings:', JSON.stringify(data.settings, null, 2));
+
             const defaultSettings = merge(get().defaultSettings, serverSettings);
+
+            console.log('[useInitUserState] defaultSettings after merge:', JSON.stringify(defaultSettings, null, 2));
 
             // merge preference
             const isEmpty = Object.keys(data.preference || {}).length === 0;
@@ -117,15 +123,15 @@ export const createCommonSlice: StateCreator<
             const user =
               data.avatar || data.userId
                 ? merge(get().user, {
-                    avatar: data.avatar,
-                    email: data.email,
-                    firstName: data.firstName,
-                    fullName: data.fullName,
-                    id: data.userId,
-                    interests: data.interests,
-                    latestName: data.lastName,
-                    username: data.username,
-                  } as LobeUser)
+                  avatar: data.avatar,
+                  email: data.email,
+                  firstName: data.firstName,
+                  fullName: data.fullName,
+                  id: data.userId,
+                  interests: data.interests,
+                  latestName: data.lastName,
+                  username: data.username,
+                } as LobeUser)
                 : get().user;
 
             set(
