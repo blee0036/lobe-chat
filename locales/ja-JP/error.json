@@ -2,6 +2,7 @@
   "error.backHome": "ホームに戻る",
   "error.desc": "ページが一時的に利用できません。ホームに戻るか、時間を置いて再試行してください（設定は失われません）",
   "error.retry": "再読み込み",
+  "error.stack": "エラースタック",
   "error.title": "ページが一時的に利用できません",
   "fetchError.detail": "詳細を見る",
   "fetchError.title": "リクエストが完了できませんでした",
@@ -150,6 +151,7 @@
   "upload.desc": "詳細：{{detail}}",
   "upload.fileOnlySupportInServerMode": "現在のデプロイモードでは非画像ファイルのアップロードはサポートされていません。{{ext}} をアップロードするには、サーバーデータベースデプロイに切り替えるか、{{cloud}} サービスを使用してください",
   "upload.networkError": "ネットワーク異常または CORS 設定が正しくありません。ファイルストレージサービスの CORS 設定を確認してから再試行してください",
+  "upload.storageLimitExceeded": "ファイルストレージがご利用中のプランの上限に達しました。プランをアップグレードするか、未使用のファイルを削除して空き容量を確保してください。",
   "upload.title": "アップロードが完了できませんでした",
   "upload.unknownError": "原因：{{reason}}",
   "upload.uploadFailed": "アップロードが完了できませんでした"
