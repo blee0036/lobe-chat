@@ -22,7 +22,7 @@ export const parseSystemAgent = (envString: string = ''): Partial<UserSystemAgen
   const config: Partial<UserSystemAgentConfig> = {};
 
   // Handle full-width commas and extra spaces
-  let envValue = cleanedEnvString.replaceAll('，', ',').trim();
+  const envValue = cleanedEnvString.replaceAll('，', ',').trim();
 
   const pairs = envValue.split(',');
 

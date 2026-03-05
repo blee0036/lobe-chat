@@ -2,7 +2,7 @@
 
 import { Button, Flexbox, FluentEmoji, Highlighter, Text } from '@lobehub/ui';
 import { Result } from 'antd';
-import Link from '@/libs/next/Link';
+import Link from 'next/link';
 import { parseAsString, useQueryState } from 'nuqs';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -14,6 +14,8 @@ const FailedPage = memo(() => {
 
   return (
     <Result
+      icon={<FluentEmoji emoji={'🥵'} size={96} type={'anim'} />}
+      status="error"
       extra={
         <Link href="/public">
           <Button block size={'large'} style={{ minWidth: 240 }}>
@@ -21,8 +23,6 @@ const FailedPage = memo(() => {
           </Button>
         </Link>
       }
-      icon={<FluentEmoji emoji={'🥵'} size={96} type={'anim'} />}
-      status="error"
       subTitle={
         <Flexbox gap={8}>
           <Text fontSize={16} type="secondary">

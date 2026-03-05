@@ -1,15 +1,17 @@
-import { GenerateContentResponse, Part } from '@google/genai';
-import { GroundingSearch } from '@lobechat/types';
+import type { GenerateContentResponse, Part } from '@google/genai';
+import type { GroundingSearch } from '@lobechat/types';
 
-import { ChatStreamCallbacks } from '../../../types';
+import type { ChatStreamCallbacks } from '../../../types';
 import { nanoid } from '../../../utils/uuid';
 import { convertGoogleAIUsage } from '../../usageConverters/google-ai';
-import {
+import type {
   ChatPayloadForTransformStream,
   StreamContext,
   StreamPartChunkData,
   StreamProtocolChunk,
   StreamToolCallChunkData,
+} from '../protocol';
+import {
   createCallbacksTransformer,
   createSSEProtocolTransformer,
   createTokenSpeedCalculator,
@@ -94,7 +96,7 @@ const transformGoogleGenerativeAIStream = (
               name: value.name,
             },
             id: generateToolCallId(index, value.name),
-            index: index,
+            index,
             thoughtSignature: value.thoughtSignature,
             type: 'function',
           }),
@@ -326,7 +328,7 @@ export const GoogleGenerativeAIStream = (
   return rawStream
     .pipeThrough(
       createTokenSpeedCalculator(transformWithPayload, {
-        enableStreaming: enableStreaming,
+        enableStreaming,
         inputStartAt,
         streamStack,
       }),

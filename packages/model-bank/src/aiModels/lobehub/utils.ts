@@ -1,4 +1,4 @@
-import { ModelParamsSchema } from 'model-bank';
+import type { ModelParamsSchema } from 'model-bank';
 
 // Common parameters for Imagen models
 export const imagenBaseParameters: ModelParamsSchema = {
@@ -45,6 +45,29 @@ export const nanoBananaProParameters: ModelParamsSchema = {
   resolution: {
     default: '1K',
     enum: ['1K', '2K', '4K'],
+  },
+};
+
+export const NANO_BANANA_2_ASPECT_RATIOS = [
+  ...NANO_BANANA_ASPECT_RATIOS,
+  '1:4',
+  '4:1',
+  '1:8',
+  '8:1',
+];
+
+export const nanoBanana2Parameters: ModelParamsSchema = {
+  aspectRatio: {
+    default: '1:1',
+    enum: NANO_BANANA_2_ASPECT_RATIOS,
+  },
+  imageUrls: {
+    default: [],
+  },
+  prompt: { default: '' },
+  resolution: {
+    default: '1K',
+    enum: ['0.5K', '1K', '2K', '4K'],
   },
 };
 

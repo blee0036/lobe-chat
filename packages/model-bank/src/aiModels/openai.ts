@@ -1,11 +1,11 @@
-import { ModelParamsSchema } from '../standard-parameters';
+import { type ModelParamsSchema } from '../standard-parameters';
 import {
-  AIChatModelCard,
-  AIEmbeddingModelCard,
-  AIImageModelCard,
-  AIRealtimeModelCard,
-  AISTTModelCard,
-  AITTSModelCard,
+  type AIChatModelCard,
+  type AIEmbeddingModelCard,
+  type AIImageModelCard,
+  type AIRealtimeModelCard,
+  type AISTTModelCard,
+  type AITTSModelCard,
 } from '../types/aiModel';
 
 export const gptImage1ParamsSchema: ModelParamsSchema = {
