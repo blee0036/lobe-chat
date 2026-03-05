@@ -649,6 +649,30 @@ const OpenAI: ModelProviderCard = {
     {
       contextWindowTokens: 200_000,
       description:
+        'Claude Sonnet 4.5 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+      displayName: 'Claude Sonnet 4.6',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-sonnet-4-6',
+      maxOutput: 64_000,
+      releasedAt: '2025-11-01',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
+        'Claude Sonnet 4.6 Extended thinking 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+      displayName: 'Claude Sonnet 4.6 Extended thinking',
+      enabled: true,
+      functionCall: true,
+      id: 'claude-sonnet-4-6-thinking',
+      maxOutput: 64_000,
+      releasedAt: '2025-11-01',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 200_000,
+      description:
         'Claude Opus 4.5 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
       displayName: 'Claude Opus 4.6',
       enabled: true,
@@ -1043,6 +1067,41 @@ const OpenAI: ModelProviderCard = {
       id: '@hf/meta-llama/meta-llama-3-8b-instruct',
     },
     //gemini
+    {
+      contextWindowTokens: 1_048_576 + 65_536,
+      description:
+        'Gemini 3.1 Flash Lite Preview 是 Google 性价比最高的模型，提供全面的功能。',
+      displayName: 'Gemini 3.1 Flash Lite Preview',
+      enabled: true,
+      functionCall: true,
+      id: 'gemini-3.1-flash-lite-preview',
+      maxOutput: 65_536,
+      releasedAt: '2025-11-18',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 32_768 + 8192,
+      description:
+        'Nano Banana 2 是 Google 最新、最快、最高效的原生多模态模型，它允许您通过对话生成和编辑图像。',
+      displayName: 'Nano Banana 2 (Preview)',
+      enabled: true,
+      id: 'gemini-3.1-flash-image-preview',
+      maxOutput: 8192,
+      releasedAt: '2025-11-20',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 1_048_576 + 65_536,
+      description:
+        'Gemini 3.1 Pro Preview 是 Google 最先进的思维模型，能够对代码、数学和STEM领域的复杂问题进行推理，以及使用长上下文分析大型数据集、代码库和文档。',
+      displayName: 'Gemini 3.1 Pro Preview',
+      enabled: true,
+      functionCall: true,
+      id: 'gemini-3.1-pro-preview',
+      maxOutput: 65_536,
+      releasedAt: '2025-11-18',
+      vision: true,
+    },
     {
       contextWindowTokens: 1_048_576 + 65_536,
       description:
