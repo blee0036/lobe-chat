@@ -2667,6 +2667,7 @@ export const openaiChatModels: AIChatModelCard[] = [
     description:
       'Nano Banana 2 是 Google 最新、最快、最高效的原生多模态模型，它允许您通过对话生成和编辑图像。',
     displayName: 'Nano Banana 2 (Preview)',
+    enabled: true,
     id: 'gemini-3.1-flash-image-preview',
     maxOutput: 8192,
     pricing: {
