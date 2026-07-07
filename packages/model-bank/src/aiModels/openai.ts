@@ -1,4 +1,4 @@
-import { ModelParamsSchema } from '../standard-parameters';
+import { CHAT_MODEL_IMAGE_GENERATION_PARAMS, ModelParamsSchema } from '../standard-parameters';
 import {
   AIChatModelCard,
   AIEmbeddingModelCard,
@@ -18,6 +18,246 @@ export const gptImage1ParamsSchema: ModelParamsSchema = {
 };
 
 export const openaiChatModels: AIChatModelCard[] = [
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_050_000,
+    description: 'GPT-5.5 pro 使用更多计算来更深入地思考，并持续提供更好的答案。',
+    displayName: 'GPT-5.5 pro',
+    enabled: true,
+    id: 'gpt-5.5-pro',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 30, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 180, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-04-24',
+    settings: {
+      extendParams: ['textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_050_000,
+    description:
+      '跨领域编码和代理任务的旗舰模型。GPT-5.5 在推理、长上下文、工具调用和复杂问题解决方面进一步增强。',
+    displayName: 'GPT-5.5',
+    enabled: true,
+    id: 'gpt-5.5',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 30, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-04-24',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_050_000,
+    description: 'GPT-5.4 pro 使用更多计算来更深入地思考，并持续提供更好的答案。',
+    displayName: 'GPT-5.4 pro',
+    enabled: true,
+    id: 'gpt-5.4-pro',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 30, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 180, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-03-05',
+    settings: {
+      extendParams: ['textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_050_000,
+    description:
+      '跨领域编码和代理任务的旗舰模型。GPT-5.4 提供更大的上下文窗口，并增强复杂推理、工具调用和结构化输出能力。',
+    displayName: 'GPT-5.4',
+    enabled: true,
+    id: 'gpt-5.4',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 2.5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-03-05',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description:
+      '更快、更经济高效的 GPT-5.4 版本，适用于明确定义的任务。在保持高质量输出的同时，提供更快的响应速度。',
+    displayName: 'GPT-5.4 mini',
+    enabled: true,
+    id: 'gpt-5.4-mini',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.75, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 4.5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.075, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-03-17',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description: '最快、最经济高效的 GPT-5.4 版本。非常适合需要快速响应且成本敏感的应用场景。',
+    displayName: 'GPT-5.4 nano',
+    enabled: true,
+    id: 'gpt-5.4-nano',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.02, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-03-17',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      imageOutput: true,
+      reasoning: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 272_000,
+    description: 'GPT-5.4 Image 2 是支持图像输入与图像输出的多模态模型。',
+    displayName: 'GPT-5.4 Image 2',
+    enabled: true,
+    id: 'gpt-5.4-image-2',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 8, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-04-21',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 400_000,
+    description: 'GPT-5.3 Codex 是针对代理式编码任务优化的 GPT-5.3 版本。',
+    displayName: 'GPT-5.3 Codex',
+    enabled: true,
+    id: 'gpt-5.3-codex',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.75, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 14, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.175, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-02-24',
+    settings: {
+      extendParams: ['gpt5ReasoningEffort', 'textVerbosity'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      vision: true,
+    },
+    contextWindowTokens: 128_000,
+    description:
+      'ChatGPT 中使用的 GPT-5.3 模型。结合了强大的语言理解与生成能力，适合对话式交互应用。',
+    displayName: 'GPT-5.3 Chat',
+    enabled: true,
+    id: 'gpt-5.3-chat',
+    maxOutput: 16_384,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.75, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 14, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.175, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-03-03',
+    type: 'chat',
+  },
   {
     abilities: {
       functionCall: true,
@@ -177,8 +417,7 @@ export const openaiChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 400_000,
-    description:
-      'GPT-5.1 Codex',
+    description: 'GPT-5.1 Codex',
     displayName: 'GPT-5.1 Codex',
     enabled: true,
     id: 'gpt-5.1-codex',
@@ -206,8 +445,7 @@ export const openaiChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 400_000,
-    description:
-      'GPT-5.1 Codex Mini',
+    description: 'GPT-5.1 Codex Mini',
     displayName: 'GPT-5.1 Codex Mini',
     enabled: true,
     id: 'gpt-5.1-codex-mini',
@@ -1210,26 +1448,433 @@ export const openaiChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Sonnet 5 是 Anthropic 面向高复杂度任务的高性能模型，在代码、代理任务和长上下文理解方面表现突出。',
+    displayName: 'Claude Sonnet 5',
+    enabled: true,
+    id: 'claude-sonnet-5',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 4, '5m': 2.5 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
+      ],
+    },
+    releasedAt: '2026-06-30',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
       reasoning: true,
       search: true,
       structuredOutput: true,
       vision: true,
     },
-    contextWindowTokens: 200_000,
-    description: 'Claude Sonnet 4.6 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Sonnet 5 Extended thinking 是 Claude Sonnet 5 的扩展思考版本，适合需要更深入推理的复杂任务。',
+    displayName: 'Claude Sonnet 5 Extended thinking',
+    enabled: true,
+    id: 'claude-sonnet-5-thinking',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 4, '5m': 2.5 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
+      ],
+    },
+    releasedAt: '2026-06-30',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Claude Fable 5 是 Anthropic 面向复杂创作、分析和代理任务的高能力模型。',
+    displayName: 'Claude Fable 5',
+    enabled: true,
+    id: 'claude-fable-5',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 50, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 12.5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-06-09',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Fable 5 Extended thinking 是 Claude Fable 5 的扩展思考版本，适合复杂分析和深度推理任务。',
+    displayName: 'Claude Fable 5 Extended thinking',
+    enabled: true,
+    id: 'claude-fable-5-thinking',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 50, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 12.5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-06-09',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Opus 4.8 是 Anthropic 用于处理高度复杂任务的强大模型，在长上下文、编码和高级推理方面表现卓越。',
+    displayName: 'Claude Opus 4.8',
+    enabled: true,
+    id: 'claude-opus-4-8',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.5, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 10, '5m': 6.25 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
+      ],
+    },
+    releasedAt: '2026-05-27',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Opus 4.8 Extended thinking 是 Claude Opus 4.8 的扩展思考版本，适合高度复杂的深度推理任务。',
+    displayName: 'Claude Opus 4.8 Extended thinking',
+    enabled: true,
+    id: 'claude-opus-4-8-thinking',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.5, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 10, '5m': 6.25 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
+      ],
+    },
+    releasedAt: '2026-05-27',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Opus 4.8 Fast 是 Claude Opus 4.8 的高速版本，在响应速度和复杂任务能力之间取得平衡。',
+    displayName: 'Claude Opus 4.8 Fast',
+    enabled: true,
+    id: 'claude-opus-4-8-fast',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 50, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 1, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 20, '5m': 12.5 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
+      ],
+    },
+    releasedAt: '2026-05-27',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Claude Opus 4.8 Fast Extended thinking 是 Claude Opus 4.8 Fast 的扩展思考版本。',
+    displayName: 'Claude Opus 4.8 Fast Extended thinking',
+    enabled: true,
+    id: 'claude-opus-4-8-fast-thinking',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 10, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 50, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 1, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 20, '5m': 12.5 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
+      ],
+    },
+    releasedAt: '2026-05-27',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Opus 4.7 是 Anthropic 用于处理高度复杂任务的强大模型，适合高级分析、编码和代理工作流。',
+    displayName: 'Claude Opus 4.7',
+    enabled: true,
+    id: 'claude-opus-4-7',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.5, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 10, '5m': 6.25 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
+      ],
+    },
+    releasedAt: '2026-04-16',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Opus 4.7 Extended thinking 是 Claude Opus 4.7 的扩展思考版本，适合高度复杂的深度推理任务。',
+    displayName: 'Claude Opus 4.7 Extended thinking',
+    enabled: true,
+    id: 'claude-opus-4-7-thinking',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.5, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 10, '5m': 6.25 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
+      ],
+    },
+    releasedAt: '2026-04-16',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Opus 4.7 Fast 是 Claude Opus 4.7 的高速版本，在响应速度和复杂任务能力之间取得平衡。',
+    displayName: 'Claude Opus 4.7 Fast',
+    enabled: true,
+    id: 'claude-opus-4-7-fast',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 30, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 150, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 3, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 60, '5m': 37.5 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
+      ],
+    },
+    releasedAt: '2026-05-12',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Claude Opus 4.7 Fast Extended thinking 是 Claude Opus 4.7 Fast 的扩展思考版本。',
+    displayName: 'Claude Opus 4.7 Fast Extended thinking',
+    enabled: true,
+    id: 'claude-opus-4-7-fast-thinking',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 30, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 150, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 3, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 60, '5m': 37.5 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
+      ],
+    },
+    releasedAt: '2026-05-12',
+    settings: {
+      extendParams: ['disableContextCaching'],
+      searchImpl: 'params',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      structuredOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Sonnet 4.6 是 Anthropic 用于处理高度复杂任务的强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
     displayName: 'Claude Sonnet 4.6',
     enabled: true,
     id: 'claude-sonnet-4-6',
-    maxOutput: 64_000,
+    maxOutput: 128_000,
     pricing: {
       units: [
-        { name: 'textInput', rate: 5, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
         { name: 'textInput_cacheRead', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheWrite', rate: 3.75, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 6, '5m': 3.75 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
       ],
     },
-    releasedAt: '2025-11-01',
+    releasedAt: '2026-02-17',
     settings: {
       extendParams: ['disableContextCaching'],
       searchImpl: 'params',
@@ -1244,21 +1889,27 @@ export const openaiChatModels: AIChatModelCard[] = [
       structuredOutput: true,
       vision: true,
     },
-    contextWindowTokens: 200_000,
-    description: 'Claude Sonnet 4.6 Extended thinking 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Sonnet 4.6 Extended thinking 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
     displayName: 'Claude Sonnet 4.6 Extended thinking',
     enabled: true,
     id: 'claude-sonnet-4-6-thinking',
-    maxOutput: 64_000,
+    maxOutput: 128_000,
     pricing: {
       units: [
-        { name: 'textInput', rate: 5, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
         { name: 'textInput_cacheRead', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheWrite', rate: 3.75, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 6, '5m': 3.75 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
       ],
     },
-    releasedAt: '2025-11-01',
+    releasedAt: '2026-02-17',
     settings: {
       extendParams: ['disableContextCaching'],
       searchImpl: 'params',
@@ -1273,21 +1924,27 @@ export const openaiChatModels: AIChatModelCard[] = [
       structuredOutput: true,
       vision: true,
     },
-    contextWindowTokens: 200_000,
-    description: 'Claude Opus 4.6 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Opus 4.6 是 Anthropic 用于处理高度复杂任务的强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
     displayName: 'Claude Opus 4.6',
     enabled: true,
     id: 'claude-opus-4-6',
-    maxOutput: 64_000,
+    maxOutput: 128_000,
     pricing: {
       units: [
         { name: 'textInput', rate: 5, strategy: 'fixed', unit: 'millionTokens' },
         { name: 'textOutput', rate: 25, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheRead', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheWrite', rate: 3.75, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.5, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 10, '5m': 6.25 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
       ],
     },
-    releasedAt: '2025-11-01',
+    releasedAt: '2026-02-04',
     settings: {
       extendParams: ['disableContextCaching'],
       searchImpl: 'params',
@@ -1302,21 +1959,27 @@ export const openaiChatModels: AIChatModelCard[] = [
       structuredOutput: true,
       vision: true,
     },
-    contextWindowTokens: 200_000,
-    description: 'Claude Opus 4.6 Extended thinking 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+    contextWindowTokens: 1_000_000,
+    description:
+      'Claude Opus 4.6 Extended thinking 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
     displayName: 'Claude Opus 4.6 Extended thinking',
     enabled: true,
     id: 'claude-opus-4-6-thinking',
-    maxOutput: 64_000,
+    maxOutput: 128_000,
     pricing: {
       units: [
         { name: 'textInput', rate: 5, strategy: 'fixed', unit: 'millionTokens' },
         { name: 'textOutput', rate: 25, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheRead', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheWrite', rate: 3.75, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.5, strategy: 'fixed', unit: 'millionTokens' },
+        {
+          lookup: { prices: { '1h': 10, '5m': 6.25 }, pricingParams: ['ttl'] },
+          name: 'textInput_cacheWrite',
+          strategy: 'lookup',
+          unit: 'millionTokens',
+        },
       ],
     },
-    releasedAt: '2025-11-01',
+    releasedAt: '2026-02-04',
     settings: {
       extendParams: ['disableContextCaching'],
       searchImpl: 'params',
@@ -1332,7 +1995,8 @@ export const openaiChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 200_000,
-    description: 'Claude Opus 4.5 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+    description:
+      'Claude Opus 4.5 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
     displayName: 'Claude Opus 4.5',
     enabled: true,
     id: 'claude-opus-4-5-20251101',
@@ -1361,7 +2025,8 @@ export const openaiChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 200_000,
-    description: 'Claude Opus 4.5 Extended thinking 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
+    description:
+      'Claude Opus 4.5 Extended thinking 是 Anthropic 用于处理高度复杂任务的最强大模型。它在性能、智能、流畅性和理解力方面表现卓越。',
     displayName: 'Claude Opus 4.5 Extended thinking',
     enabled: true,
     id: 'claude-opus-4-5-20251101-thinking',
@@ -1390,7 +2055,8 @@ export const openaiChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 200_000,
-    description: 'Claude Haiku 4.5 是 Anthropic 最快且最智能的 Haiku 模型，具有闪电般的速度和扩展思考能力。',
+    description:
+      'Claude Haiku 4.5 是 Anthropic 最快且最智能的 Haiku 模型，具有闪电般的速度和扩展思考能力。',
     displayName: 'Claude Haiku 4.5',
     enabled: true,
     id: 'claude-haiku-4-5-20251001',
@@ -1424,7 +2090,8 @@ export const openaiChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 200_000,
-    description: 'Claude Haiku 4.5 Extended thinking 是 Anthropic 最快且最智能的 Haiku 模型，具有闪电般的速度和扩展思考能力。',
+    description:
+      'Claude Haiku 4.5 Extended thinking 是 Anthropic 最快且最智能的 Haiku 模型，具有闪电般的速度和扩展思考能力。',
     displayName: 'Claude Haiku 4.5 Extended thinking',
     enabled: true,
     id: 'claude-haiku-4-5-20251001-thinking',
@@ -1995,7 +2662,160 @@ export const openaiChatModels: AIChatModelCard[] = [
     },
     contextWindowTokens: 1_048_576 + 65_536,
     description:
-      'Gemini 3.1 Flash Lite Preview 是 Google 性价比最高的模型，提供全面的功能。',
+      'Gemini 3.5 Flash 是 Google 最新的高速多模态模型，支持文本、图像、音频、视频和文件输入。',
+    displayName: 'Gemini 3.5 Flash',
+    enabled: true,
+    id: 'gemini-3.5-flash',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 1.5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 9, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 0.083333, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-05-19',
+    settings: {
+      extendParams: ['thinkingBudget', 'urlContext'],
+      searchImpl: 'params',
+      searchProvider: 'google',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: 'Gemini 3.1 Flash Lite 是 Google 性价比最高的模型，提供全面的多模态能力。',
+    displayName: 'Gemini 3.1 Flash Lite',
+    enabled: true,
+    id: 'gemini-3.1-flash-lite',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.025, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 0.083333, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-05-07',
+    settings: {
+      extendParams: ['thinkingBudget', 'urlContext'],
+      searchImpl: 'params',
+      searchProvider: 'google',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      imageOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 131_072 + 32_768,
+    description:
+      'Nano Banana 2 是 Google 最新、最快、最高效的原生多模态模型，它允许您通过对话生成和编辑图像。',
+    displayName: 'Nano Banana 2',
+    enabled: true,
+    id: 'gemini-3.1-flash-image',
+    maxOutput: 32_768,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-06-18',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      imageOutput: true,
+      vision: true,
+    },
+    contextWindowTokens: 65_536 + 66_000,
+    description:
+      'Nano Banana 2 Lite 是 Google 轻量级原生多模态图像模型，支持通过对话生成和编辑图像。',
+    displayName: 'Nano Banana 2 Lite',
+    enabled: true,
+    id: 'gemini-3.1-flash-lite-image',
+    maxOutput: 66_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-06-30',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description:
+      'Gemini 3.1 Pro Preview Custom Tools 是支持自定义工具调用的 Gemini 3.1 Pro 预览模型。',
+    displayName: 'Gemini 3.1 Pro Preview Custom Tools',
+    enabled: true,
+    id: 'gemini-3.1-pro-preview-customtools',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 12, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 0.375, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-02-25',
+    settings: {
+      extendParams: ['thinkingBudget', 'urlContext'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      imageOutput: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 65_536 + 32_768,
+    description: 'Nano Banana Pro 是 Google 高能力原生多模态图像模型，支持通过对话生成和编辑图像。',
+    displayName: 'Nano Banana Pro',
+    enabled: true,
+    id: 'gemini-3-pro-image',
+    maxOutput: 32_768,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 12, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 0.375, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-06-18',
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description: 'Gemini 3.1 Flash Lite Preview 是 Google 性价比最高的模型，提供全面的功能。',
     displayName: 'Gemini 3.1 Flash Lite Preview',
     enabled: true,
     id: 'gemini-3.1-flash-lite-preview',
@@ -2179,8 +2999,7 @@ export const openaiChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 1_048_576 + 65_536,
-    description:
-      'Gemini 3.0 Flash Preview 是 Google 性价比最高的模型，提供全面的功能。',
+    description: 'Gemini 3.0 Flash Preview 是 Google 性价比最高的模型，提供全面的功能。',
     displayName: 'Gemini 3.0 Flash Preview',
     enabled: true,
     id: 'gemini-3-flash-preview',
@@ -2492,12 +3311,43 @@ export const openaiChatModels: AIChatModelCard[] = [
     maxOutput: 65_536,
     pricing: {
       units: [
-        { name: 'textInput_cacheRead', rate: 0.025, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.01, strategy: 'fixed', unit: 'millionTokens' },
         { name: 'textInput', rate: 0.1, strategy: 'fixed', unit: 'millionTokens' },
         { name: 'textOutput', rate: 0.4, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 0.083333, strategy: 'fixed', unit: 'millionTokens' },
       ],
     },
     releasedAt: '2025-07-22',
+    settings: {
+      extendParams: ['thinkingBudget', 'urlContext'],
+      searchImpl: 'params',
+      searchProvider: 'google',
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      search: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_048_576 + 65_536,
+    description:
+      'Gemini 2.5 Flash-Lite Preview 09-2025 是 Google 小型高性价比模型的 2025 年 9 月预览版本。',
+    displayName: 'Gemini 2.5 Flash-Lite Preview 09-2025',
+    enabled: true,
+    id: 'gemini-2.5-flash-lite-preview-09-2025',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.01, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.4, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 0.083333, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2025-09-25',
     settings: {
       extendParams: ['thinkingBudget', 'urlContext'],
       searchImpl: 'params',
@@ -2865,6 +3715,57 @@ export const openaiChatModels: AIChatModelCard[] = [
   },
 
   // deepseek 官方
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      structuredOutput: true,
+    },
+    contextWindowTokens: 1_048_576,
+    description:
+      'DeepSeek V4 Pro 是 DeepSeek V4 系列的高能力模型，适合长上下文、复杂推理和代码任务。',
+    displayName: 'DeepSeek V4 Pro',
+    enabled: true,
+    id: 'deepseek-v4-pro',
+    maxOutput: 384_000,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.435, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.87, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.003625, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-04-24',
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      structuredOutput: true,
+    },
+    contextWindowTokens: 1_048_576,
+    description: 'DeepSeek V4 Flash 是 DeepSeek V4 系列的高速低成本模型，适合大规模通用文本任务。',
+    displayName: 'DeepSeek V4 Flash',
+    enabled: true,
+    id: 'deepseek-v4-flash',
+    maxOutput: 16_384,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.09, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.18, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.018, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-04-24',
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
   {
     abilities: {
       functionCall: true,
@@ -5930,8 +6831,7 @@ export const openaiChatModels: AIChatModelCard[] = [
       reasoning: true,
     },
     contextWindowTokens: 131_072,
-    description:
-      'DeepSeek-R1 0528 版本',
+    description: 'DeepSeek-R1 0528 版本',
     displayName: 'DeepSeek R1 0528 (Fireworks)',
     enabled: true,
     id: 'DeepSeek-R1-0528',
@@ -5955,8 +6855,7 @@ export const openaiChatModels: AIChatModelCard[] = [
       reasoning: true,
     },
     contextWindowTokens: 131_072,
-    description:
-      'DeepSeek V3.2',
+    description: 'DeepSeek V3.2',
     displayName: 'DeepSeek V3.2',
     enabled: true,
     id: 'deepseek-v3.2',
@@ -5978,8 +6877,7 @@ export const openaiChatModels: AIChatModelCard[] = [
       reasoning: true,
     },
     contextWindowTokens: 131_072,
-    description:
-      'DeepSeek V3.2 EXP',
+    description: 'DeepSeek V3.2 EXP',
     displayName: 'DeepSeek V3.2 EXP',
     enabled: true,
     id: 'deepseek-v3.2-exp',
@@ -6001,8 +6899,7 @@ export const openaiChatModels: AIChatModelCard[] = [
       reasoning: true,
     },
     contextWindowTokens: 131_072,
-    description:
-      'DeepSeek V3.2 Speciale',
+    description: 'DeepSeek V3.2 Speciale',
     displayName: 'DeepSeek V3.2 Speciale',
     enabled: true,
     id: 'deepseek-v3.2-speciale',
@@ -6144,6 +7041,370 @@ export const openaiChatModels: AIChatModelCard[] = [
     },
     type: 'chat',
   },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_048_576,
+    description:
+      'Xiaomi MiMo-V2.5 is a multimodal long-context model with text, image, audio and video inputs.',
+    displayName: 'Xiaomi MiMo V2.5',
+    enabled: true,
+    id: 'xiaomi/mimo-v2.5',
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.028, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.105, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.28, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 1_048_576,
+    description: 'Xiaomi MiMo-V2.5-Pro is the text-focused pro variant with 1M context.',
+    displayName: 'Xiaomi MiMo V2.5 Pro',
+    enabled: true,
+    id: 'xiaomi/mimo-v2.5-pro',
+    maxOutput: 131_072,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.0036, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.435, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.87, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_048_576,
+    description: 'MiniMax M3 is a native multimodal agent model with text, image and video inputs.',
+    displayName: 'MiniMax M3',
+    enabled: true,
+    id: 'MiniMax-M3',
+    maxOutput: 512_000,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.06, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.2, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 204_800,
+    description: 'MiniMax M2.7 is a recent agentic productivity and coding model.',
+    displayName: 'MiniMax M2.7',
+    enabled: true,
+    id: 'MiniMax-M2.7',
+    maxOutput: 196_608,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput', rate: 0.18, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.72, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 204_800,
+    description: 'MiniMax M2.5 is optimized for productivity, coding and tool use.',
+    displayName: 'MiniMax M2.5',
+    enabled: true,
+    id: 'MiniMax-M2.5',
+    maxOutput: 196_608,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput', rate: 0.12, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.48, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 1_048_576,
+    description: 'GLM-5.2 is a long-context GLM reasoning model.',
+    displayName: 'GLM-5.2',
+    enabled: true,
+    id: 'glm-5.2',
+    maxOutput: 1_048_576,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.17, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.9, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2.86, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 202_752,
+    description: 'GLM-5.1 is a recent GLM reasoning and coding model.',
+    displayName: 'GLM-5.1',
+    enabled: true,
+    id: 'glm-5.1',
+    maxOutput: 128_000,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.1794, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.966, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3.036, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'GLM-5 Turbo is a higher-throughput GLM reasoning model.',
+    displayName: 'GLM-5 Turbo',
+    id: 'glm-5-turbo',
+    maxOutput: 131_072,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.24, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 1.2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 4, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 202_752,
+    description: 'GLM-5V Turbo supports text, image and video inputs for multimodal reasoning.',
+    displayName: 'GLM-5V Turbo',
+    id: 'glm-5v-turbo',
+    maxOutput: 131_072,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.24, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 1.2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 4, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 256_000,
+    description: 'Step 3.7 Flash is a fast multimodal model with text, image and video inputs.',
+    displayName: 'Step 3.7 Flash',
+    enabled: true,
+    id: 'step-3.7-flash',
+    maxOutput: 256_000,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.04, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.15, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'Step 3.5 Flash is a low-cost long-context reasoning model.',
+    displayName: 'Step 3.5 Flash',
+    enabled: true,
+    id: 'step-3.5-flash',
+    maxOutput: 65_536,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput', rate: 0.1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Qwen3.7 Plus is a recent multimodal Qwen model with long-context reasoning.',
+    displayName: 'Qwen3.7 Plus',
+    enabled: true,
+    id: 'qwen3.7-plus',
+    maxOutput: 65_536,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.064, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.32, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.28, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Qwen3.7 Max is a flagship Qwen text reasoning model.',
+    displayName: 'Qwen3.7 Max',
+    enabled: true,
+    id: 'qwen3.7-max',
+    maxOutput: 65_536,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3.75, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Qwen3.6 Flash is a fast multimodal Qwen model for text, image and video inputs.',
+    displayName: 'Qwen3.6 Flash',
+    enabled: true,
+    id: 'qwen3.6-flash',
+    maxOutput: 65_536,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput', rate: 0.1875, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.125, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'Kimi K2.7 Code is a recent Moonshot coding model with vision input support.',
+    displayName: 'Kimi K2.7 Code',
+    enabled: true,
+    id: 'moonshotai/kimi-k2.7-code',
+    maxOutput: 16_384,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.74, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3.5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'Kimi K2.6 is a recent multimodal Moonshot model with long context.',
+    displayName: 'Kimi K2.6',
+    enabled: true,
+    id: 'moonshotai/kimi-k2.6',
+    maxOutput: 262_144,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.14, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.66, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3.41, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 262_144,
+    description:
+      'Kimi K2.5 is a multimodal Moonshot model with structured output and tool support.',
+    displayName: 'Kimi K2.5',
+    id: 'moonshotai/kimi-k2.5',
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.203, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.375, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2.025, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
 ];
 
 export const openaiEmbeddingModels: AIEmbeddingModelCard[] = [
@@ -6264,6 +7525,58 @@ export const openaiSTTModels: AISTTModelCard[] = [
 
 // 图像生成模型
 export const openaiImageModels: AIImageModelCard[] = [
+  {
+    description:
+      'Nano Banana 2 是 Google 最新、最快、最高效的原生多模态模型，它允许您通过对话生成和编辑图像。',
+    displayName: 'Nano Banana 2',
+    enabled: true,
+    id: 'gemini-3.1-flash-image:image',
+    maxOutput: 32_768,
+    parameters: CHAT_MODEL_IMAGE_GENERATION_PARAMS,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.5, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-06-18',
+    type: 'image',
+  },
+  {
+    description:
+      'Nano Banana 2 Lite 是 Google 轻量级原生多模态图像模型，支持通过对话生成和编辑图像。',
+    displayName: 'Nano Banana 2 Lite',
+    enabled: true,
+    id: 'gemini-3.1-flash-lite-image:image',
+    maxOutput: 66_000,
+    parameters: CHAT_MODEL_IMAGE_GENERATION_PARAMS,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-06-30',
+    type: 'image',
+  },
+  {
+    description: 'Nano Banana Pro 是 Google 高能力原生多模态图像模型，支持通过对话生成和编辑图像。',
+    displayName: 'Nano Banana Pro',
+    enabled: true,
+    id: 'gemini-3-pro-image:image',
+    maxOutput: 32_768,
+    parameters: CHAT_MODEL_IMAGE_GENERATION_PARAMS,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 12, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheRead', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput_cacheWrite', rate: 0.375, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    releasedAt: '2026-06-18',
+    type: 'image',
+  },
   // https://platform.openai.com/docs/models/gpt-image-1
   {
     description: 'ChatGPT 原生多模态图片生成模型',

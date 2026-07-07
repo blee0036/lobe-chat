@@ -7,7 +7,10 @@ export const IMAGE_GENERATION_MODEL_WHITELIST = [
   'gemini-2.5-flash-image-preview:free',
   'gemini-2.5-flash-image',
   'gemini-3-pro-image-preview',
+  'gemini-3-pro-image',
   'gemini-3.1-flash-image-preview',
+  'gemini-3.1-flash-image',
+  'gemini-3.1-flash-lite-image',
   // More models can be added in the future
 ] as const;
 
@@ -46,13 +49,13 @@ export async function postProcessModelList(
     for (const model of matchingModels) {
       // Blacklist: remove unnecessary properties, keep the rest
       const {
-        files,           // drop
-        functionCall,    // drop
-        reasoning,       // drop
-        search,          // drop
-        imageOutput,     // drop
-        video,           // drop
-        vision,          // drop
+        files, // drop
+        functionCall, // drop
+        reasoning, // drop
+        search, // drop
+        imageOutput, // drop
+        video, // drop
+        vision, // drop
         type: _dropType, // will be overwritten
         parameters: _dropParams, // will be overwritten
         ...rest

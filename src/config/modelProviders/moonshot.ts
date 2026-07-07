@@ -4,6 +4,83 @@ import { ModelProviderCard } from '@/types/llm';
 const Moonshot: ModelProviderCard = {
   chatModels: [
     {
+      contextWindowTokens: 262_144,
+      description: 'Kimi K2.7 Code is Kimi latest coding model with text, image and video inputs.',
+      displayName: 'Kimi K2.7 Code',
+      enabled: true,
+      functionCall: true,
+      id: 'kimi-k2.7-code',
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    {
+      contextWindowTokens: 262_144,
+      description: 'Kimi K2.7 Code HighSpeed is the faster output variant of Kimi K2.7 Code.',
+      displayName: 'Kimi K2.7 Code HighSpeed',
+      functionCall: true,
+      id: 'kimi-k2.7-code-highspeed',
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    {
+      contextWindowTokens: 262_144,
+      description:
+        'Kimi K2.6 is a multimodal model for long-context coding, reasoning and agent tasks.',
+      displayName: 'Kimi K2.6',
+      enabled: true,
+      functionCall: true,
+      id: 'kimi-k2.6',
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    {
+      contextWindowTokens: 262_144,
+      description:
+        'Kimi K2 0905 preview improves agentic coding, frontend generation and long-context understanding.',
+      displayName: 'Kimi K2 0905',
+      enabled: true,
+      functionCall: true,
+      id: 'kimi-k2-0905-preview',
+    },
+    {
+      contextWindowTokens: 131_072,
+      description:
+        'Kimi K2 0711 preview is a trillion-parameter MoE model for coding and agent workflows.',
+      displayName: 'Kimi K2 0711',
+      functionCall: true,
+      id: 'kimi-k2-0711-preview',
+    },
+    {
+      contextWindowTokens: 262_144,
+      description: 'Kimi K2 Turbo preview is the high-throughput K2 variant.',
+      displayName: 'Kimi K2 0905 Turbo',
+      functionCall: true,
+      id: 'kimi-k2-turbo-preview',
+    },
+    {
+      contextWindowTokens: 131_072,
+      description:
+        'Kimi Latest follows the latest Kimi assistant model and supports image understanding.',
+      displayName: 'Kimi Latest',
+      enabled: true,
+      functionCall: true,
+      id: 'kimi-latest',
+      vision: true,
+    },
+    {
+      contextWindowTokens: 131_072,
+      description:
+        'Kimi Thinking Preview is a multimodal thinking model for deeper reasoning tasks.',
+      displayName: 'Kimi Thinking Preview',
+      enabled: true,
+      id: 'kimi-thinking-preview',
+      reasoning: true,
+      vision: true,
+    },
+    {
       contextWindowTokens: 8192,
       description:
         'Moonshot V1 8K 专为生成短文本任务设计，具有高效的处理性能，能够处理8,192个tokens，非常适合简短对话、速记和快速内容生成。',

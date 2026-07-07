@@ -16,6 +16,9 @@ describe('IMAGE_GENERATION_MODEL_WHITELIST', () => {
   it('should contain expected whitelisted models', () => {
     expect(IMAGE_GENERATION_MODEL_WHITELIST).toContain('gemini-2.5-flash-image-preview');
     expect(IMAGE_GENERATION_MODEL_WHITELIST).toContain('gemini-2.5-flash-image-preview:free');
+    expect(IMAGE_GENERATION_MODEL_WHITELIST).toContain('gemini-3-pro-image');
+    expect(IMAGE_GENERATION_MODEL_WHITELIST).toContain('gemini-3.1-flash-image');
+    expect(IMAGE_GENERATION_MODEL_WHITELIST).toContain('gemini-3.1-flash-lite-image');
   });
 });
 
@@ -149,6 +152,30 @@ describe('postProcessModelList', () => {
     expect(imageModel2).toBeDefined();
     expect(imageModel1?.type).toBe('image');
     expect(imageModel2?.type).toBe('image');
+  });
+
+  it('should generate image models for stable Gemini image models', async () => {
+    const result = await postProcessModelList([
+      {
+        displayName: 'Nano Banana 2',
+        enabled: true,
+        id: 'gemini-3.1-flash-image',
+      },
+      {
+        displayName: 'Nano Banana Pro',
+        enabled: true,
+        id: 'gemini-3-pro-image',
+      },
+    ]);
+
+    expect(result.find((m) => m.id === 'gemini-3.1-flash-image:image')).toMatchObject({
+      id: 'gemini-3.1-flash-image:image',
+      type: 'image',
+    });
+    expect(result.find((m) => m.id === 'gemini-3-pro-image:image')).toMatchObject({
+      id: 'gemini-3-pro-image:image',
+      type: 'image',
+    });
   });
 
   it('should preserve all original model properties in image versions', async () => {

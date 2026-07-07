@@ -5,6 +5,27 @@ import { ModelProviderCard } from '@/types/llm';
 const Stepfun: ModelProviderCard = {
   chatModels: [
     {
+      contextWindowTokens: 256_000,
+      description:
+        'Step 3.7 Flash is a fast multimodal model with text, image and video input support.',
+      displayName: 'Step 3.7 Flash',
+      enabled: true,
+      functionCall: true,
+      id: 'step-3.7-flash',
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    {
+      contextWindowTokens: 262_144,
+      description: 'Step 3.5 Flash is a low-cost reasoning model for long-context text workloads.',
+      displayName: 'Step 3.5 Flash',
+      enabled: true,
+      functionCall: true,
+      id: 'step-3.5-flash',
+      reasoning: true,
+    },
+    {
       contextWindowTokens: 8000,
       description: '高速模型，适合实时对话。',
       displayName: 'Step 1 Flash',

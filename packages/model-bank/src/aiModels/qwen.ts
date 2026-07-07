@@ -5,6 +5,231 @@ import { AIChatModelCard, AIImageModelCard } from '../types/aiModel';
 const qwenChatModels: AIChatModelCard[] = [
   {
     abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description:
+      'Qwen3.7 Plus is a recent multimodal Qwen model with long-context reasoning and tool use.',
+    displayName: 'Qwen3.7 Plus',
+    enabled: true,
+    id: 'qwen3.7-plus',
+    maxOutput: 65_536,
+    organization: 'Qwen',
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.064, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.32, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.28, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Qwen3.7 Max is a flagship text reasoning model with 1M context.',
+    displayName: 'Qwen3.7 Max',
+    enabled: true,
+    id: 'qwen3.7-max',
+    maxOutput: 65_536,
+    organization: 'Qwen',
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3.75, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Qwen3.6 Flash is a fast multimodal Qwen model for text, image and video inputs.',
+    displayName: 'Qwen3.6 Flash',
+    enabled: true,
+    id: 'qwen3.6-flash',
+    maxOutput: 65_536,
+    organization: 'Qwen',
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput', rate: 0.1875, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.125, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Qwen3.6 Plus is a high-capability multimodal Qwen model with 1M context.',
+    displayName: 'Qwen3.6 Plus',
+    id: 'qwen3.6-plus',
+    maxOutput: 65_536,
+    organization: 'Qwen',
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput', rate: 0.325, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.95, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'Qwen3.6 Max Preview is a preview flagship model for advanced reasoning.',
+    displayName: 'Qwen3.6 Max Preview',
+    id: 'qwen3.6-max-preview',
+    maxOutput: 65_536,
+    organization: 'Qwen',
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput', rate: 1.04, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 6.24, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'Qwen3.6 35B A3B is a compact multimodal MoE model.',
+    displayName: 'Qwen3.6 35B A3B',
+    id: 'qwen3.6-35b-a3b',
+    maxOutput: 262_144,
+    organization: 'Qwen',
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput', rate: 0.14, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 262_144,
+    description:
+      'Qwen3.6 27B is a multimodal Qwen model for long-context text, image and video tasks.',
+    displayName: 'Qwen3.6 27B',
+    id: 'qwen3.6-27b',
+    maxOutput: 262_140,
+    organization: 'Qwen',
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.285, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2.4, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'Qwen3 Max Thinking is a dedicated thinking variant of Qwen3 Max.',
+    displayName: 'Qwen3 Max Thinking',
+    id: 'qwen3-max-thinking',
+    maxOutput: 32_768,
+    organization: 'Qwen',
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput', rate: 0.78, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3.9, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    settings: {
+      extendParams: ['reasoningBudgetToken'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'Qwen3 Coder Next is a recent coding model for agentic software workflows.',
+    displayName: 'Qwen3 Coder Next',
+    id: 'qwen3-coder-next',
+    maxOutput: 262_144,
+    organization: 'Qwen',
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.07, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.11, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.8, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    settings: {
+      extendParams: ['enableReasoning'],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
       reasoning: true,
       vision: true,
     },
@@ -1287,7 +1512,8 @@ const qwenChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 131_072,
-    description: 'Qwen3 VL 30B 非思考模式（Instruct），面向普通指令跟随场景，保持较高的多模态理解与生成能力。',
+    description:
+      'Qwen3 VL 30B 非思考模式（Instruct），面向普通指令跟随场景，保持较高的多模态理解与生成能力。',
     displayName: 'Qwen3 VL 30B A3B Instruct',
     id: 'qwen3-vl-30b-a3b-instruct',
     maxOutput: 32_768,
@@ -1346,7 +1572,8 @@ const qwenChatModels: AIChatModelCard[] = [
       reasoning: true,
     },
     contextWindowTokens: 131_072,
-    description: 'Qwen3 VL 235B A22B 思考模式（开源版），针对高难度强推理与长视频理解场景，提供顶尖的视觉+文本推理能力。',
+    description:
+      'Qwen3 VL 235B A22B 思考模式（开源版），针对高难度强推理与长视频理解场景，提供顶尖的视觉+文本推理能力。',
     displayName: 'Qwen3 VL 235B A22B Thinking',
     id: 'qwen3-vl-235b-a22b-thinking',
     maxOutput: 32_768,
@@ -1368,7 +1595,8 @@ const qwenChatModels: AIChatModelCard[] = [
       vision: true,
     },
     contextWindowTokens: 131_072,
-    description: 'Qwen3 VL 235B A22B 非思考模式（Instruct），适用于非思考指令场景，保持强大的视觉理解能力。',
+    description:
+      'Qwen3 VL 235B A22B 非思考模式（Instruct），适用于非思考指令场景，保持强大的视觉理解能力。',
     displayName: 'Qwen3 VL 235B A22B Instruct',
     id: 'qwen3-vl-235b-a22b-instruct',
     maxOutput: 32_768,

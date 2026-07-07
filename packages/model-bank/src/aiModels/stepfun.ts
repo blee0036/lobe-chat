@@ -5,6 +5,50 @@ import { AIChatModelCard, AIImageModelCard } from '../types/aiModel';
 const stepfunChatModels: AIChatModelCard[] = [
   {
     abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 256_000,
+    description:
+      'Step 3.7 Flash is a fast multimodal model with text, image and video input support.',
+    displayName: 'Step 3.7 Flash',
+    enabled: true,
+    id: 'step-3.7-flash',
+    maxOutput: 256_000,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.04, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.15, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'Step 3.5 Flash is a low-cost reasoning model for long-context text workloads.',
+    displayName: 'Step 3.5 Flash',
+    enabled: true,
+    id: 'step-3.5-flash',
+    maxOutput: 65_536,
+    pricing: {
+      currency: 'USD',
+      units: [
+        { name: 'textInput', rate: 0.1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
       reasoning: true,
       vision: true,
     },

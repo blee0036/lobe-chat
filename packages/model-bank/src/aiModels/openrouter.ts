@@ -15,6 +15,308 @@ const openrouterChatModels: AIChatModelCard[] = [
     abilities: {
       functionCall: true,
       reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_048_576,
+    description:
+      'Xiaomi MiMo-V2.5 is a multimodal long-context model with text, image, audio and video input support.',
+    displayName: 'Xiaomi MiMo V2.5',
+    enabled: true,
+    id: 'xiaomi/mimo-v2.5',
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.028, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.105, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.28, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 1_048_576,
+    description: 'Xiaomi MiMo-V2.5-Pro is the text-focused pro variant with 1M context.',
+    displayName: 'Xiaomi MiMo V2.5 Pro',
+    enabled: true,
+    id: 'xiaomi/mimo-v2.5-pro',
+    maxOutput: 131_072,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.0036, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.435, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.87, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'Kimi K2.7 Code is a recent Moonshot coding model with vision input support.',
+    displayName: 'Kimi K2.7 Code',
+    enabled: true,
+    id: 'moonshotai/kimi-k2.7-code',
+    maxOutput: 16_384,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.15, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.74, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3.5, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'Kimi K2.6 is a recent multimodal Moonshot model with long context.',
+    displayName: 'Kimi K2.6',
+    enabled: true,
+    id: 'moonshotai/kimi-k2.6',
+    maxOutput: 262_144,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.14, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.66, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3.41, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 262_144,
+    description:
+      'Kimi K2.5 is a multimodal Moonshot model with structured output and tool support.',
+    displayName: 'Kimi K2.5',
+    id: 'moonshotai/kimi-k2.5',
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.203, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.375, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2.025, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_048_576,
+    description: 'MiniMax M3 is a native multimodal agent model with text, image and video inputs.',
+    displayName: 'MiniMax M3',
+    enabled: true,
+    id: 'minimax/minimax-m3',
+    maxOutput: 512_000,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.06, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.2, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 204_800,
+    description: 'MiniMax M2.7 is a recent agentic productivity and coding model.',
+    displayName: 'MiniMax M2.7',
+    enabled: true,
+    id: 'minimax/minimax-m2.7',
+    maxOutput: 196_608,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.18, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.72, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 204_800,
+    description: 'MiniMax M2.5 is optimized for productivity, coding and tool use.',
+    displayName: 'MiniMax M2.5',
+    id: 'minimax/minimax-m2.5',
+    maxOutput: 196_608,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.12, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.48, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 1_048_576,
+    description: 'GLM-5.2 is a long-context Z.ai reasoning model.',
+    displayName: 'GLM-5.2',
+    enabled: true,
+    id: 'z-ai/glm-5.2',
+    maxOutput: 1_048_576,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.17, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.9, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 2.86, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 202_752,
+    description: 'GLM-5.1 is a recent Z.ai reasoning and coding model.',
+    displayName: 'GLM-5.1',
+    id: 'z-ai/glm-5.1',
+    maxOutput: 128_000,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.1794, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.966, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3.036, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'GLM-5 Turbo is a higher-throughput Z.ai reasoning model.',
+    displayName: 'GLM-5 Turbo',
+    id: 'z-ai/glm-5-turbo',
+    maxOutput: 131_072,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.24, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 1.2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 4, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      video: true,
+      vision: true,
+    },
+    contextWindowTokens: 256_000,
+    description:
+      'Step 3.7 Flash is a fast multimodal StepFun model with text, image and video inputs.',
+    displayName: 'Step 3.7 Flash',
+    enabled: true,
+    id: 'stepfun/step-3.7-flash',
+    maxOutput: 256_000,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.04, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.15, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 262_144,
+    description: 'Step 3.5 Flash is a low-cost long-context reasoning model.',
+    displayName: 'Step 3.5 Flash',
+    id: 'stepfun/step-3.5-flash',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        { name: 'textInput', rate: 0.1, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 0.3, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+      vision: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Qwen3.7 Plus is a recent multimodal Qwen model with long-context reasoning.',
+    displayName: 'Qwen3.7 Plus',
+    enabled: true,
+    id: 'qwen/qwen3.7-plus',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.064, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 0.32, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 1.28, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
+    },
+    contextWindowTokens: 1_000_000,
+    description: 'Qwen3.7 Max is a flagship Qwen text reasoning model.',
+    displayName: 'Qwen3.7 Max',
+    id: 'qwen/qwen3.7-max',
+    maxOutput: 65_536,
+    pricing: {
+      units: [
+        { name: 'textInput_cacheRead', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textInput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
+        { name: 'textOutput', rate: 3.75, strategy: 'fixed', unit: 'millionTokens' },
+      ],
+    },
+    type: 'chat',
+  },
+  {
+    abilities: {
+      functionCall: true,
+      reasoning: true,
     },
     contextWindowTokens: 163_840,
     description:
