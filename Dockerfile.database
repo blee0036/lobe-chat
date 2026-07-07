@@ -101,13 +101,14 @@ RUN \
     # Enable corepack
     && corepack enable \
     # Use pnpm for corepack
-    && corepack use $(sed -n 's/.*"packageManager": "\(.*\)".*/\1/p' package.json) \
+    && PACKAGE_MANAGER="$(sed -n 's/.*"packageManager": "\(.*\)".*/\1/p' package.json)" \
+    && corepack use "${PACKAGE_MANAGER}" \
     # Install the dependencies
     && pnpm i \
     # Add db migration dependencies
     && mkdir -p /deps \
     && cd /deps \
-    && pnpm init \
+    && printf '{"name":"deps","version":"1.0.0","private":true,"packageManager":"%s","type":"module"}\n' "${PACKAGE_MANAGER}" > package.json \
     && pnpm add pg drizzle-orm
 
 COPY . .
